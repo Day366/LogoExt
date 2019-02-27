@@ -1,0 +1,13 @@
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\bin\Release\LogoExt.exe.config
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\bin\Release\LogoExt.exe
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\bin\Release\LogoExt.pdb
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.Form1.resources
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.ItemPriceForm.resources
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.MainForm.resources
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.Properties.Resources.resources
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.csproj.GenerateResource.cache
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.csproj.CoreCompileInputs.cache
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.exe
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.pdb
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.csprojAssemblyReference.cache
+D:\Projects\VisualStudio\LogoVS\LogoExt\LogoExt\obj\Release\LogoExt.Temp.resources

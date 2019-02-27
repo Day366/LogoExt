@@ -1,0 +1,1004 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>0490400902</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ALBA ETİKET REKLAM ELEK.YAZ.MAK.SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>11.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000147</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>154.92</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>154.92</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>8800262937</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ÖZEN TEKNİK PLAS.İNŞ.MAK.SAN. VETİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>11.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000148</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>435.12</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>435.12</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3230518307</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>EA CAM ÜRÜNLERİ İNŞ. SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>11.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000149</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.19</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>960.73</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>960.73</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>15220492498</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>PORTA ETİKET / HASAN ÖZKAN</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>11.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000150</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>1.88</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>468.03</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>468.03</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>2740204076</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>DELTA ELEKTRİK İML. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000152</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>209.51</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>209.51</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3810687550</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>EVAS EV ALETLERİ SANAYİ A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000269</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>30</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>28.17</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2838.14</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2838.14</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>4690536632</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>İBRAHİM ORTAKÇI CAM AYNA İŞLEME VE MOB. SAN. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000271</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>1.88</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>3390.59</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>4545.67</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>4690536632</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>İBRAHİM ORTAKÇI CAM AYNA İŞLEME VE MOB. SAN. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000271</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.69</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1155.08</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1155.08</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7230046827</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>B/S/H EV ALETLERİ SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000273</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>25</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>23.48</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>4404.15</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>4404.15</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3540376613</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ERENLİ SAÇ PROFİL KAUÇUK PLASTİK SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000275</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>1.88</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>490.71</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1056.96</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3540376613</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ERENLİ SAÇ PROFİL KAUÇUK PLASTİK SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000275</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>566.25</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>566.25</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7710059815</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>SİSTEM SERİGRAFİ MATB. VE AMBALAJ SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000276</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>478.74</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>478.74</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>0340364454</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>AKPLAS PLASTİK KALIP SAN.VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>12.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000278</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1095.27</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1095.27</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>0010973921</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>2KA BOYA SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>13.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000156</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>213.1</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>213.1</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>28808089508</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>İMAJ DEKOR CAM BOYA SAN. / İSMAİL YÜCEBAŞ</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>13.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000157</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1892.31</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1892.31</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>5170029420</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ALTIN PLAKET / AHMET KARAMAN</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>13.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000161</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>281.5</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>854.84</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>5170029420</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ALTIN PLAKET / AHMET KARAMAN</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>13.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000161</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.19</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>573.34</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>573.34</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>8860060395</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>UĞURLU OTO CAM SAN.VE TİC.A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>13.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000279</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.19</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1159.36</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1159.36</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7290009801</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>PETEK METAL PLAS.END.TAS. BASKI SAN VE TİC.A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>13.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000282</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1564.54</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>4312.48</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7290009801</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>PETEK METAL PLAS.END.TAS. BASKI SAN VE TİC.A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>13.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000282</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>1.8699999999999999</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2747.94</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2747.94</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1660395876</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>BERRAK SERİGRAFİ MATBA.İNŞ. VE YAPI MALZ.SAN.TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>14.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000164</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>20</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>18.78</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>7691.62</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>7691.62</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3250525302</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>EFE AJANS ETİKET MATB.PROM.ÜRÜN.SAN.TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>14.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000167</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>981.15</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>981.15</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7340099684</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>RAPSODİ DEKOR. AMBALAJ SAN. VE TİC. LTD. STİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>14.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000286</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>18.8</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>15.78</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>78059.5</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>78059.5</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1900655698</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>BURAK ALÜMİNYUM SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>14.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000289</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.19</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>110.65</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>110.65</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7710059815</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>SİSTEM SERİGRAFİ MATB. VE AMBALAJ SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>14.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000291</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>10</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>9.39</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2922.3</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2922.3</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>4790074641</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>İPEK DANIŞ. TUR.NAKL.İTH.İHR. SAN.VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000168</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>80</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>75.12</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>5759.23</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>5759.23</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3270045259</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>EKER PLASTİK İNŞ. NAK. TUR.SAN. VE TİC. LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000169</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>282.84</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>282.84</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1430664346</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>BASKITANE TEKSTİL İML.SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000170</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1055.62</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1055.62</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>34834035426</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>MAD REKLAM SERİGRAFİ MATB.HİZM./ NAZMİYE DUYMUŞ</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000171</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>218.81</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>668.53</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>34834035426</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>MAD REKLAM SERİGRAFİ MATB.HİZM./ NAZMİYE DUYMUŞ</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000171</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.19</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>449.72</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>449.72</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3370387150</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ERATEKS TEKSTİL SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000292</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>444.72</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1702.49</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3370387150</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ERATEKS TEKSTİL SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000292</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1257.77</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1257.77</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1650284977</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>BERICAP KAPAK SANAYİ A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000295</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>200</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>187.81</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>16397.51</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>42655.35</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1650284977</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>BERICAP KAPAK SANAYİ A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000295</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>12</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>11.26</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>26257.84</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>26257.84</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>5790209345</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>KORKMAZ MUTFAK EŞYALARI SAN.VE TİC.A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000296</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>288.08</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>288.08</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>4380390000</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>GÜNSAN ELEK.MALZ.SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000299</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>360.11</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>360.11</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>6360037757</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>OKANDAN  CAM SAN.VE TİC.A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000301</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2564.72</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>5279.83</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>6360037757</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>OKANDAN  CAM SAN.VE TİC.A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>15.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000301</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2.5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>2.34</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2715.11</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2715.11</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>34826110230</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>PİRAMİT REKLAM / HALİS DEMİRBAŞ</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000173</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>1.88</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>425.28</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>425.28</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>0660291578</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ALTIN YAPRAK EĞİTİM SANAT ÜRÜNLERİ SAN. TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000174</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>182.87</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>609.0200000000001</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>0660291578</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ALTIN YAPRAK EĞİTİM SANAT ÜRÜNLERİ SAN. TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000174</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.19</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>426.15</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>426.15</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>6080507173</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>LETPART END. DAN. OTOM. İTH.İHR.SAN TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000175</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>140.92</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>140.92</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>15115018642</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>MSL ELELKTRONİK / SERAP KAYIKET</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000177</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>159.05</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>372.07</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>15115018642</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>MSL ELELKTRONİK / SERAP KAYIKET</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000177</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>213.02</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>213.02</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>0340364454</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>AKPLAS PLASTİK KALIP SAN.VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000303</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1378.91</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1378.9099999999999</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7710059815</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>SİSTEM SERİGRAFİ MATB. VE AMBALAJ SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000304</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>6</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>5.63</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1161.62</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1161.62</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1670016649</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>BEY-DUR KONFEKSİYON İMALAT İHRACAT SAN. VE TİC. LTD. ŞTİ </Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000309</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>446.88</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1250.42</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1670016649</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>BEY-DUR KONFEKSİYON İMALAT İHRACAT SAN. VE TİC. LTD. ŞTİ </Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>18.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000309</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>803.54</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>803.54</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>2630385305</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ÇÖZÜM SERİGRAFİ BOYA SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>19.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000182</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>528.96</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>528.96</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>53347134976</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>TAMER DURĞUN</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>19.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000183</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>122.71</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>122.71</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>8360022141</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>TEKLAS KAUÇUK SAN.TİC.AŞ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>19.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000312</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>24</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>22.54</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>12840.66</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>12840.66</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>0680728028</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ANADOLU MÜZİK ALETLERİ SAN.VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>20.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000187</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>804.99</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>804.99</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1430664346</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>BASKITANE TEKSTİL İML.SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>20.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000188</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.3</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.28</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1015.47</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1015.4700000000001</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3350049052</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ENKA PLASTİK KALIP SAN TİC. LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>20.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000326</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>1.88</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2587.57</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2587.57</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7290009801</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>PETEK METAL PLAS.END.TAS. BASKI SAN VE TİC.A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>20.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000331</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>12</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>11.27</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>3248.06</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>10996.24</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7290009801</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>PETEK METAL PLAS.END.TAS. BASKI SAN VE TİC.A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>20.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000331</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2.6</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>2.44</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>7748.18</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>7748.18</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>2930281015</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>DETAY TUR.İNŞ.DANIŞ.HİZM.SAN VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>20.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000332</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>362.28</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>362.28</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>6481198416</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ORTEL ELEKTRONİK SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>21.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000189</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>1.88</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>409.2</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>409.2</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>1871211467</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>B REKLAM PROM.BASKI HİZM. SAN. VE TİC. LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>21.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000190</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>365.27</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>365.27</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7970048616</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ŞAHİNER SERİGRAFİ SAN.TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>21.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000191</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>607.89</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2025.99</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7970048616</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ŞAHİNER SERİGRAFİ SAN.TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>21.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000191</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.47</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1418.1</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1418.1</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>28808089508</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>İMAJ DEKOR CAM BOYA SAN. / İSMAİL YÜCEBAŞ</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>21.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000192</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>630.69</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>630.69</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3950805498</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>GEZER REKLAM BAS. İNŞ.TEKS. İTH.İHR.SAN.TİC. LTD. STİ</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>21.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000193</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>20</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>18.78</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2119.59</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2119.59</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>2950444233</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>DİAM VİTRİN TAS.HİZM.AMBA.SAN VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>21.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000333</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2150.02</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2150.02</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>4020014789</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>GÖKERPLAST PLASTİK SANAYİ VE TİCARET LTD. STİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>21.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000334</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>10</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>9.39</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1227.71</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>1227.71</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>63118007804</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>TURK O MAKET BALIK / ERKAN GÜRÜLTÜ</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>22.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000195</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>132.79</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>192.61</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>63118007804</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>TURK O MAKET BALIK / ERKAN GÜRÜLTÜ</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>22.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000195</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>59.82</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>59.82</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>46465815650</Alıcının_x0020_T.C_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>ÖREN YILDIZ ÇAMAŞIRLARI / ERDAL KIZILAĞIL</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>22.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000197</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>294.87</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>294.87</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7570257181</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>EUROPTEC CAM SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>22.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000341</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>20</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>18.78</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>7286.5</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>9988.58</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7570257181</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>EUROPTEC CAM SAN. VE TİC. A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>22.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000341</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>4</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>3.76</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>2702.08</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>2702.08</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>4730034948</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>İLPEN KALEMCİLİK PLAS.SAN VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>22.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000346</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>10</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>9.39</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>970.4</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>970.4</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3150038289</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>DESİ PRINT SERİGRAFİ, MATBAA GÖRSEL REKL.HİZM.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>25.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERA2019000000200</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.09</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>300.76</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>300.76</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>8860026387</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>UĞUR PLASTİK AMB.SAN. TİC.  LTD. ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>25.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000347</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.7</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>383.07</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>383.07</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7400050721</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>SAKARYA İZ REKLAM LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>25.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000350</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>4.5</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>4.23</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>4167.53</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>4167.53</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>03100</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>8380392617</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>TEMİZ SERİGRAFİ PLAS.MON.İML.İNŞ. SAN.TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>25.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000358</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>1</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.94</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>853.36</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>853.36</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3824.99.96.90.68</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>7710059815</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>SİSTEM SERİGRAFİ MATB. VE AMBALAJ SAN. VE TİC.LTD.ŞTİ.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>25.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000359</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>0.2</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>0.19</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>165.33</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>165.33</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>02</Kod>
+  </Table>
+  <Table>
+    <G.T.I.P._x0020_No>3814.00</G.T.I.P._x0020_No>
+    <Alıcının_x0020_T.C_x000A_Kimlik_x0020_No />
+    <Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>3810687550</Alıcının_x0020_Vergi_x000A_Kimlik_x0020_No>
+    <Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>EVAS EV ALETLERİ SANAYİ A.Ş.</Alıcının_x0020_Adı_x000A_Soyadı_x0020__x002F__x0020_Ünvanı>
+    <Fatura_x0020_Tarihi>25.02.2019</Fatura_x0020_Tarihi>
+    <Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>ERF2019000000360</Fatura_x0020_Seri_x0020_-_x000A_Sıra_x0020_No>
+    <Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>30</Teslim_x0020_Edilen_x000A_Mal_x0020_Miktarı>
+    <Toplam_x0020_ÖTV_x000A_Tutarı>28.17</Toplam_x0020_ÖTV_x000A_Tutarı>
+    <Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>1262.78</Teslim_x0020_Bedeli_x000A__x0028_ÖTV_x0020_KDV_x0020_Hariç_x0029_>
+    <Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>3657.83</Toplam_x0028_ÖTV_x000A_KDV_x0020_Hariç_x0029_>
+    <Kod>01</Kod>
+  </Table>
+</NewDataSet>
