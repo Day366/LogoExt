@@ -3,7 +3,6 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Data;
 using System.Diagnostics;
-using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -35,15 +34,15 @@ namespace LogoExt
                 return null;
             }
         }
-        public void QueryGTIB(Form1 form1)
+        public void QueryGTIB(GtipForm gtipForm)
         {
             SqlConnection con;
             SqlCommand cmd;
             SqlDataAdapter da;
             DataSet ds;
             DataTable dt;
-            DateTime date1 = form1.DateTimePicker1.Value;
-            DateTime date2 = form1.DateTimePicker2.Value;
+            DateTime date1 = gtipForm.DateTimePicker1.Value;
+            DateTime date2 = gtipForm.DateTimePicker2.Value;
      
             string fileName;
             string directoryPath;
@@ -73,14 +72,14 @@ namespace LogoExt
 
                 AmountCorrection(dt);
                 LineMerge(dt);
-                TotalCollumnFix(dt);
+        //        TotalCollumnFix(dt);
                 ChangeCollumnName(dt);                
 
                 ds.WriteXml(fullPath);
                 Process.Start(fullPath);
 
-                form1.PictureBox1.Image = form1.CheckImage;
-                form1.PictureBox1.Show();
+                gtipForm.PictureBox1.Image = gtipForm.CheckImage;
+                gtipForm.PictureBox1.Show();
             }
             catch (Exception ex)
             {
@@ -88,12 +87,12 @@ namespace LogoExt
                 LogWriter.Instance.LogWrite(ex.Message + ": " + ex.StackTrace);
 
                 Global.Instance.ErrorNotification("GTIP Kodlarını alamadı: --- " + ex.Message);
-                form1.PictureBox1.Image = form1.ErrorImage;
-                form1.PictureBox1.Show();
+                gtipForm.PictureBox1.Image = gtipForm.ErrorImage;
+                gtipForm.PictureBox1.Show();
             }
         }
 
-        public List<String> QueryFirmCodes(ItemPriceForm itemPriceForm)
+        public List<String> QueryFirmCodes()
         {
             SqlConnection con;
             SqlCommand cmd;
@@ -102,7 +101,7 @@ namespace LogoExt
 
             try {
                 con = new SqlConnection(Global.sqlConnection);
-                cmd = new SqlCommand("SELECT CODE FROM LG_0" + itemPriceForm.GetFirmCode(0) + "_CLCARD", con);
+                cmd = new SqlCommand("SELECT CODE FROM LG_0" + Global.Instance.GetFirmCodeCurrentYear() + "_CLCARD", con);
 
                 con.Open();
 
@@ -129,7 +128,7 @@ namespace LogoExt
             }
         }
 
-        public List<String> QueryItemCodes(ItemPriceForm itemPriceForm)
+        public List<String> QueryItemCodes()
         {
             SqlConnection con;
             SqlCommand cmd;
@@ -138,7 +137,7 @@ namespace LogoExt
 
             try {
                 con = new SqlConnection(Global.sqlConnection);
-                cmd = new SqlCommand("SELECT CODE FROM LG_0" + itemPriceForm.GetFirmCode(0) + "_ITEMS", con);
+                cmd = new SqlCommand("SELECT CODE FROM LG_0" + Global.Instance.GetFirmCodeCurrentYear() + "_ITEMS", con);
 
                 con.Open();
 
@@ -216,6 +215,20 @@ namespace LogoExt
         public DataTable QueryPastTenYearsPriceByItemAndFirm(ItemPriceForm itemPriceForm, string selectedItem, string selectedFirm)
         {
             DataTable dt = QueryDB(ItemAndFirmDataSince2010(itemPriceForm, selectedItem, selectedFirm));
+            return dt;
+        }
+
+        public DataTable QueryEkstre(string selectedFirm)
+        {
+            DataTable dt;
+            dt = QueryDB("SELECT format(a.Tarih, 'dd.MM.yyyy') as 'Tarih', a.[Fiş No], a.TRCODE, a.PAYMENTREF, a.Açıklama, a.Borç, a.Alacak, a.SIGN FROM (SELECT Clfline.DATE_ as 'Tarih', Clfline.DOCODE as 'Fiş No', Clfline.TRCODE, Clcard.PAYMENTREF,  Clfline.LINEEXP as 'Açıklama', Clfline.SIGN, (CASE WHEN Clfline.SIGN = 0 THEN FORMAT(Clfline.AMOUNT, '####,###.00') END) AS 'Borç', (CASE WHEN Clfline.SIGN = 1 THEN FORMAT(Clfline.AMOUNT, '####,###.00') END) AS 'Alacak' FROM LG_0" + Global.Instance.GetFirmCodeAnotherYear(1) + "_01_CLFLINE Clfline, LG_0" + Global.Instance.GetFirmCodeAnotherYear(1) + "_CLCARD Clcard WHERE Clcard.CODE = '" + selectedFirm + "' and Clcard.LOGICALREF = Clfline.CLIENTREF and Clfline.CANCELLED = 0 UNION all SELECT Clfline.DATE_ as 'Tarih', Clfline.DOCODE as 'Fiş No', Clfline.TRCODE, Clcard.PAYMENTREF,  Clfline.LINEEXP as 'Açıklama', Clfline.SIGN, (CASE WHEN Clfline.SIGN = 0 THEN FORMAT(Clfline.AMOUNT, '####,###.00') END) AS 'Borç', (CASE WHEN Clfline.SIGN = 1 THEN FORMAT(Clfline.AMOUNT, '####,###.00') END) AS 'Alacak' FROM LG_0" + Global.Instance.GetFirmCodeAnotherYear(0) + "_01_CLFLINE Clfline, LG_0" + Global.Instance.GetFirmCodeAnotherYear(0) + "_CLCARD Clcard WHERE Clcard.CODE = '" + selectedFirm + "' and Clcard.LOGICALREF = Clfline.CLIENTREF and Clfline.CANCELLED = 0 and Clfline.TRCODE != 14) a");                    
+            return dt; 
+        }
+
+        public DataTable QueryVade(string payplanref)
+        {
+            DataTable dt;
+            dt = QueryDB("SELECT DAY_ FROM LG_0" + Global.Instance.GetFirmCodeAnotherYear(0) + "_PAYLINES Where PAYPLANREF =" + payplanref);
             return dt;
         }
 

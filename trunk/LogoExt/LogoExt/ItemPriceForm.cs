@@ -12,10 +12,6 @@ namespace LogoExt
 {
     public partial class ItemPriceForm : Form
     {
-
-        public List<string> ItemCodeList { get; }
-        public List<string> FirmCodeList { get; }
-
         public ItemPriceForm()
         {
             InitializeComponent();
@@ -38,9 +34,13 @@ namespace LogoExt
                 }
             }
             listBox1.SetSelected(1, true);
+            this.Load += FormOnLoad;
+        }
 
-            ItemCodeList = Global.Instance.query.QueryItemCodes(this);      //Get all items codes
-            FirmCodeList = Global.Instance.query.QueryFirmCodes(this);      //Get all firm codes
+        private void FormOnLoad(object sender, EventArgs e)
+        {
+            dataGridView1.CellMouseUp += OnCellMouseUp;
+            dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
         }
 
         public string GetFirmCode(int pastYears) {
@@ -77,8 +77,8 @@ namespace LogoExt
                 listBox2.Items.Clear();
                 string upper = textBox1.Text.ToUpper();
 
-                for (int i = 0; i < ItemCodeList.Count(); i++) {
-                    string temp = ItemCodeList[i];
+                for (int i = 0; i < Global.Instance.ItemCodeList.Count(); i++) {
+                    string temp = Global.Instance.ItemCodeList[i];
 
                     if (temp.ToUpper().Contains(upper)) {
                         listBox2.Items.Add(temp);
@@ -97,8 +97,8 @@ namespace LogoExt
                 listBox3.Items.Clear();
                 string upper = textBox2.Text.ToUpper();
 
-                for (int i = 0; i < FirmCodeList.Count(); i++) {
-                    string temp = FirmCodeList[i];
+                for (int i = 0; i < Global.Instance.FirmCodeList.Count(); i++) {
+                    string temp = Global.Instance.FirmCodeList[i];
 
                     if (temp.ToUpper().Contains(upper)) {
                         listBox3.Items.Add(temp);
@@ -190,7 +190,7 @@ namespace LogoExt
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
-                if (listBox2.Items.Count == 1) {
+                if (listBox2.Items.Count > 0) {
                     listBox2.SelectedItem = listBox2.Items[0];
                 }
             }
@@ -200,7 +200,7 @@ namespace LogoExt
         private void TextBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
-                if (listBox3.Items.Count == 1) {
+                if (listBox3.Items.Count > 0) {
                     listBox3.SelectedItem = listBox3.Items[0];
                 }
             }
@@ -270,16 +270,33 @@ namespace LogoExt
             dataGridView1.Columns["DOLAR"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["Tarih"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
-    }
 
-    public static class ExtensionMethods
-    {        
-        //To fix scroll at dataGridView
-        public static void DoubleBuffered(this DataGridView dgv, bool setting)
+        private void OnCellMouseUp(object sender, MouseEventArgs e)
         {
-            Type dgvType = dgv.GetType();
-            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
-            pi.SetValue(dgv, setting, null);
+            int columnIndex = 0;
+            decimal rowTotal = 0;
+            decimal result = 0;
+            NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+            for (int i = 0; i < dataGridView1.SelectedCells.Count; i++) {
+                if (i == 0) {
+                    columnIndex = dataGridView1.SelectedCells[i].ColumnIndex;
+                }
+
+                if (columnIndex == dataGridView1.SelectedCells[i].ColumnIndex) {
+                    if (dataGridView1.SelectedCells[i].Value != null && dataGridView1.SelectedCells[i].Value.ToString() != "") {
+                        if (Decimal.TryParse(dataGridView1.SelectedCells[i].Value.ToString(), style,  CultureInfo.GetCultureInfo("fr-FR"), out result)) {   //143,57  virgüllü olan ayırmaları Fransız Culture la ayır
+                            rowTotal += result;
+                        }
+                    }
+                }
+                else {
+                    label3.Text = "Toplam: Farklı sütünları topladın!";
+                    return;
+                }
+            }
+
+            label3.Text = "Toplam: " + rowTotal.ToString();
+            label3.Visible = true;
         }
     }
 }
