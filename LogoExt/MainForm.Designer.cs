@@ -33,6 +33,7 @@ namespace LogoExt
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabForms = new System.Windows.Forms.TabControl();
@@ -41,6 +42,7 @@ namespace LogoExt
             this.labelWarningBody = new System.Windows.Forms.Label();
             this.timerSlideIn = new System.Windows.Forms.Timer(this.components);
             this.timerSlideOut = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -56,6 +58,8 @@ namespace LogoExt
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button5);
+            this.splitContainer1.Panel1.Controls.Add(this.button4);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             // 
@@ -66,6 +70,17 @@ namespace LogoExt
             this.splitContainer1.SplitterDistance = 186;
             this.splitContainer1.TabIndex = 3;
             // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 46);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(186, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Ekstre";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -73,7 +88,7 @@ namespace LogoExt
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(186, 23);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Malzeme Kurları";
+            this.button2.Text = "Malzeme Birim Fiyatı";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -141,6 +156,17 @@ namespace LogoExt
             this.timerSlideOut.Interval = 1;
             this.timerSlideOut.Tick += new System.EventHandler(this.timerSlideOut_Tick);
             // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button5.Location = new System.Drawing.Point(0, 621);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(186, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Ayarlar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +198,8 @@ namespace LogoExt
         private System.Windows.Forms.Timer timerSlideOut;
         private System.Windows.Forms.Label labelWarningBody;
         private Button button3;
+        private Button button4;
+        private Button button5;
 
         public Label LabelWarningBody { get => labelWarningBody; set => labelWarningBody = value; }
 

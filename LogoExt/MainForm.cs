@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Threading;
+using System.IO;
+using System.Web.Helpers;
 using System.Windows.Forms;
 
 namespace LogoExt
@@ -12,12 +13,70 @@ namespace LogoExt
             InitializeComponent();
             tabForms.MouseClick += tabControl_MouseClick;
             labelWarningBody.MouseClick += panelNotification_MouseClick;
-            this.Load += MainForm_Load;          
+            this.Load += MainFormOnLoad;  
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void MainFormOnLoad(object sender, EventArgs e)
         {
-            OpenItemPriceForm();
+            Global.Instance.FirmCodeList = Global.Instance.query.QueryFirmCodes();      //Get all firm codes
+            Global.Instance.ItemCodeList = Global.Instance.query.QueryItemCodes();      //Get all items codes
+                        
+            splitContainer1.SplitterMoved += new SplitterEventHandler(splitContainer1_SplitterMoved);
+            ParseSettings();
+            splitContainer1.SplitterDistance = Global.Instance.settings.SplitterDistance;
+
+            if (Global.Instance.settings.DefaultForm == Global.ITEMPRICEFORM) {
+                OpenItemPriceForm();
+            }
+            else if (Global.Instance.settings.DefaultForm == Global.GTIPFORM) {
+                OpenGtipForm();
+            }
+            else if (Global.Instance.settings.DefaultForm == Global.EKSTREFORM) {
+                OpenEkstreForm();
+            }
+        }
+        
+        private void ParseSettings()
+        {
+            if (!Directory.Exists(Global.DIRECTORYPATH)) {        //if directory doesn't exists create the "LogoExt" folder
+                Directory.CreateDirectory(Global.DIRECTORYPATH);
+            }
+
+            if (!File.Exists(Global.FULLPATH)) {
+                Global.Instance.settings = AddNonExistingSettingDefaultValue("{ }");
+                Global.Instance.WriteSettings();
+                return;
+            }
+            else {
+                string readSettingsStr = File.ReadAllText(Global.FULLPATH);
+                Global.Instance.settings = AddNonExistingSettingDefaultValue(readSettingsStr);
+                Global.Instance.WriteSettings();
+            }
+        }
+
+        /*
+         * "{'SplitterDistance': 100, 'TextSize': 12, 'DefaultForm': 'ItemPriceForm', 'FontFamily': 'Tahoma' }"
+         * Eğer dosyanın içinde satırları bulamazsa tek tek default değerlerini ekle varsa olduğu gibi kalcak
+         */
+        private dynamic AddNonExistingSettingDefaultValue(string settingsStr)
+        {
+            dynamic settings = Json.Decode(settingsStr);
+            if(settings.SplitterDistance == null)
+                settings.SplitterDistance = 100;
+            if (settings.FontFamily == null)
+                settings.FontFamily = "Tahoma";
+            if (settings.TextSize == null)
+                settings.TextSize = 12;
+            if (settings.DefaultForm == null)
+                settings.DefaultForm = "ItemPriceForm";
+
+            return settings;
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+            Global.Instance.settings.SplitterDistance = splitContainer1.SplitterDistance;
+            Global.Instance.WriteSettings();
         }
 
         private void tabForms_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,6 +99,16 @@ namespace LogoExt
         private void button2_Click(object sender, EventArgs e)
         {
             OpenItemPriceForm();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.timerSlideOut.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenEkstreForm();
         }
 
         private void tabControl_MouseClick(object sender, MouseEventArgs e)
@@ -96,12 +165,12 @@ namespace LogoExt
         }
 
         private void OpenGtipForm() {
-            Form1 form1 = new Form1();
-            form1.MdiParent = this;
-            form1.Dock = DockStyle.Fill;
-            form1.TopLevel = false;
-            form1.FormBorderStyle = FormBorderStyle.None;
-            form1.Show();
+            GtipForm gtipForm = new GtipForm();
+            gtipForm.MdiParent = this;
+            gtipForm.Dock = DockStyle.Fill;
+            gtipForm.TopLevel = false;
+            gtipForm.FormBorderStyle = FormBorderStyle.None;
+            gtipForm.Show();
 
             TabPage tp = new TabPage(this.ActiveMdiChild.Text);
             tp.Tag = this.ActiveMdiChild;
@@ -110,12 +179,13 @@ namespace LogoExt
 
             this.ActiveMdiChild.Tag = tp;
             this.ActiveMdiChild.FormClosed += new FormClosedEventHandler(ActiveMdiChild_FormClosed);
-            tp.Controls.Add(form1);
+            tp.Controls.Add(gtipForm);
 
             if (!tabForms.Visible) {
                 tabForms.Visible = true;
             }
         }
+
         private void OpenItemPriceForm()
         {
             ItemPriceForm itemPriceForm = new ItemPriceForm();
@@ -140,9 +210,72 @@ namespace LogoExt
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void OpenEkstreForm()
         {
-            this.timerSlideOut.Enabled = true;
+            EkstreForm ekstreForm = new EkstreForm();
+            ekstreForm.MdiParent = this;
+            ekstreForm.Dock = DockStyle.Fill;
+            ekstreForm.TopLevel = false;
+            ekstreForm.FormBorderStyle = FormBorderStyle.None;
+            ekstreForm.Show();
+
+            TabPage tp = new TabPage(this.ActiveMdiChild.Text) {
+                Tag = this.ActiveMdiChild,
+                Parent = tabForms
+            };
+            tabForms.SelectedTab = tp;
+
+            this.ActiveMdiChild.Tag = tp;
+            this.ActiveMdiChild.FormClosed += new FormClosedEventHandler(ActiveMdiChild_FormClosed);
+            tp.Controls.Add(ekstreForm);
+
+            if (!tabForms.Visible) {
+                tabForms.Visible = true;
+            }
+        }
+
+
+        private void OpenSettingsForm()
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.MdiParent = this;
+            settingsForm.Dock = DockStyle.Fill;
+            settingsForm.TopLevel = false;
+            settingsForm.FormBorderStyle = FormBorderStyle.None;
+            settingsForm.Show();
+
+            TabPage tp = new TabPage(this.ActiveMdiChild.Text) {
+                Tag = this.ActiveMdiChild,
+                Parent = tabForms
+            };
+            tabForms.SelectedTab = tp;
+
+            this.ActiveMdiChild.Tag = tp;
+            this.ActiveMdiChild.FormClosed += new FormClosedEventHandler(ActiveMdiChild_FormClosed);
+            tp.Controls.Add(settingsForm);
+
+            if (!tabForms.Visible) {
+                tabForms.Visible = true;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenSettingsForm();
+        }
+
+        public void ChangeFontsOfAllDataGridViews()
+        {
+            for (int i = 0; i < tabForms.Controls.Count; i++) {
+                if (tabForms.Controls[i].Text == "EkstreForm") {
+                    EkstreForm ekstreForm = (EkstreForm)tabForms.Controls[i].Tag;
+                    ekstreForm.DataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                }
+                else if(tabForms.Controls[i].Text == "ItemPriceForm") {
+                    ItemPriceForm itemPriceForm = (ItemPriceForm)tabForms.Controls[i].Tag;
+                    itemPriceForm.DataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                }
+            }            
         }
     }
 }
