@@ -13,10 +13,9 @@ namespace LogoExt
             InitializeComponent();
             tabForms.MouseClick += tabControl_MouseClick;
             labelWarningBody.MouseClick += panelNotification_MouseClick;
-            this.Load += MainFormOnLoad;  
         }
 
-        private void MainFormOnLoad(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
             Global.Instance.FirmCodeList = Global.Instance.query.QueryFirmCodes();      //Get all firm codes
             Global.Instance.ItemCodeList = Global.Instance.query.QueryItemCodes();      //Get all items codes

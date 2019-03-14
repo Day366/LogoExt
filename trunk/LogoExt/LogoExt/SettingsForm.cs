@@ -15,13 +15,12 @@ namespace LogoExt
         public SettingsForm()
         {
             InitializeComponent();
-            this.Load += FormOnLoad;
         }
 
-        private void FormOnLoad(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-            fontDialog1.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
-            string[] forms = new string[]{"Gtip Kodlu Ürünler", "Malzeme Brim Fiyatı", "Ekstre"};
+            string[] forms = new string[] { "GTİP Kodlu Ürünler", "Malzeme Birim Fiyatı", "Ekstre" };
+            fontDialog1.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);            
             comboBox1.Items.AddRange(forms);
 
             if (Global.Instance.settings.DefaultForm == Global.GTIPFORM) {
@@ -35,7 +34,7 @@ namespace LogoExt
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FontStyleButton_Click(object sender, EventArgs e)
         {
             DialogResult fontResult = fontDialog1.ShowDialog();
             if (fontResult == DialogResult.OK) {
