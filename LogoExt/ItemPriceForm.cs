@@ -14,7 +14,11 @@ namespace LogoExt
     {
         public ItemPriceForm()
         {
-            InitializeComponent();
+            InitializeComponent();       
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
@@ -34,11 +38,6 @@ namespace LogoExt
                 }
             }
             listBox1.SetSelected(1, true);
-            this.Load += FormOnLoad;
-        }
-
-        private void FormOnLoad(object sender, EventArgs e)
-        {
             dataGridView1.CellMouseUp += OnCellMouseUp;
             dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
         }

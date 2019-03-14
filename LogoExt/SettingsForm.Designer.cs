@@ -29,7 +29,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FontStyleButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -42,15 +42,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "İlk Açılış Tabı: ";
             // 
-            // button1
+            // FontStyleButton
             // 
-            this.button1.Location = new System.Drawing.Point(13, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Yazı Tipi";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.FontStyleButton.Location = new System.Drawing.Point(13, 48);
+            this.FontStyleButton.Name = "FontStyleButton";
+            this.FontStyleButton.Size = new System.Drawing.Size(75, 23);
+            this.FontStyleButton.TabIndex = 1;
+            this.FontStyleButton.Text = "Yazı Tipi";
+            this.FontStyleButton.UseVisualStyleBackColor = true;
+            this.FontStyleButton.Click += new System.EventHandler(this.FontStyleButton_Click);
             // 
             // comboBox1
             // 
@@ -67,7 +67,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FontStyleButton);
             this.Controls.Add(this.label1);
             this.Name = "SettingsForm";
             this.Text = "Ayarlar";
@@ -80,7 +80,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button FontStyleButton;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }

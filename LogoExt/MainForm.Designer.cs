@@ -33,6 +33,7 @@ namespace LogoExt
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@ namespace LogoExt
             this.labelWarningBody = new System.Windows.Forms.Label();
             this.timerSlideIn = new System.Windows.Forms.Timer(this.components);
             this.timerSlideOut = new System.Windows.Forms.Timer(this.components);
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -69,6 +69,17 @@ namespace LogoExt
             this.splitContainer1.Size = new System.Drawing.Size(1109, 644);
             this.splitContainer1.SplitterDistance = 186;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button5.Location = new System.Drawing.Point(0, 621);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(186, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Ayarlar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -155,17 +166,6 @@ namespace LogoExt
             // 
             this.timerSlideOut.Interval = 1;
             this.timerSlideOut.Tick += new System.EventHandler(this.timerSlideOut_Tick);
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button5.Location = new System.Drawing.Point(0, 621);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(186, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Ayarlar";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // MainForm
             // 

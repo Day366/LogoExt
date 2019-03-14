@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogoExt
@@ -26,10 +22,13 @@ namespace LogoExt
         {
             textBox1.KeyPress += new KeyPressEventHandler(TextBox1_KeyPress);
             dataGridView1.CellMouseUp += OnCellMouseUp;
+            dataGridView1.MouseLeave += OnCellMouseLeave;
+            textBox2.KeyPress += new KeyPressEventHandler(TextBox2_KeyPress);
             dataGridView1.DoubleBuffered(true);
             label4.BringToFront();
             label5.BringToFront();
             label6.BringToFront();
+            textBox2.BringToFront();
             dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
         }
 
@@ -42,89 +41,7 @@ namespace LogoExt
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null) {
-                label1.Text = label2.Text = label3.Text = label4.Text = label5.Text = label6.Text = label8.Text = "";
-                DataTable dt = Global.Instance.query.QueryEkstre(listBox1.SelectedItem.ToString());
-                if (dt.Rows.Count == 0) {
-                    //TODO hiç row yoksa ekstre de yoktur ona göre bi geri bildirim yap
-                    dataGridView1.DataSource = null;
-                    dataGridView1.Visible = true;
-                    return;
-                }
-                DataTable payPlanDT;
-                Decimal bakiye;
-                Decimal vadesiDolan = 0;
-                string alacakStr;
-                string bakiyeStr;
-                int vade;
-                string vadeStr;
-                int latestVadeRow = -1;
-
-
-                bakiye = 0;
-                alacakStr = " (A)";
-                bakiyeStr = " (B)";
-                dt.Columns.Add("Bakiye", typeof(string));
-                dt.Columns.Add("Fiş türü", typeof(string));
-                dt.Columns.Add("Vade Tarihi", typeof(DateTime));
-
-                payPlanDT = Global.Instance.query.QueryVade(dt.Rows[dt.Rows.Count-1]["PAYMENTREF"].ToString());
-                vadeStr = Regex.Match(payPlanDT.Rows[0]["DAY_"].ToString(), @"\d+").Value;
-                vade = Int32.Parse(vadeStr);
-                label1.Text = "Vade: ";
-                label4.Text = vadeStr;
-                label1.Visible = true;
-                label4.Visible = true;
-                dt.Rows[0]["Bakiye"] = "0";
-                foreach (DataRow row in dt.Rows) {
-                    row["Fiş Türü"] = ProcessFicheType(row["TRCODE"].ToString());                    
-                    row["Vade Tarihi"] = ProcessVadeDate(row, vade);
-                                       
-
-                    if (row["Borç"] != null && row["Borç"].ToString().Length > 0) {
-                        bakiye += Decimal.Parse(row["Borç"].ToString(), CultureInfo.InvariantCulture);
-                        if (bakiye >= 0) {
-                            row["Bakiye"] = string.Format("{0:n}", Math.Floor(Math.Abs(bakiye) * 100) / 100) + bakiyeStr;
-                        }
-                        else {
-                            row["Bakiye"] = string.Format("{0:n}", Math.Floor(Math.Abs(bakiye) * 100) / 100) + alacakStr;
-                        }                      
-                    }
-                    else if(row["Alacak"] != null && row["Alacak"].ToString().Length > 0) {
-                        bakiye -= Decimal.Parse(row["Alacak"].ToString(), CultureInfo.InvariantCulture);
-                        if (bakiye >= 0) {
-                            row["Bakiye"] = string.Format("{0:n}", Math.Floor(Math.Abs(bakiye) * 100) / 100) + bakiyeStr;
-                        }
-                        else {
-                            row["Bakiye"] = string.Format("{0:n}", Math.Floor(Math.Abs(bakiye) * 100) / 100) + alacakStr;
-                        }                        
-                    }
-
-                    DateTime faturaTarihi = DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE"));
-                    double difference = (DateTime.Today - faturaTarihi).TotalDays;
-                    if (vade != 0) {
-                        if (difference >= vade && row["Bakiye"].ToString() != "") {
-                            latestVadeRow += 1;
-                            vadesiDolan = bakiye;
-                        }
-                        else if (difference < vade && row["Alacak"].ToString() != "") {
-                            vadesiDolan -= Decimal.Parse(row["Alacak"].ToString(), CultureInfo.InvariantCulture);
-                        }
-                    }
-                }
-                VadeAvarageCalculation(latestVadeRow, vadesiDolan, dt.Rows);
-                dt.Columns.Remove("TRCODE");
-                dt.Columns.Remove("PAYMENTREF");
-                dt.Columns.Remove("SIGN");
-                dt.SetColumnsOrder("Tarih", "Fiş No", "Fiş Türü", "Vade Tarihi", "Açıklama", "Borç", "Alacak");
-                DataGridViewFormat(dt, latestVadeRow);
-                if (vade != 0) {
-                    label2.Text = "Vadesi Dolan: ";
-                    label5.Text = vadesiDolan.ToString("#,###0.00");
-                    label2.Visible = true;
-                    label5.Visible = true;
-                }                
-            }
+            Ekstre(-1);
         }
 
         //When "Enter" Key is pressed and there is one item in listBox2 run query
@@ -133,6 +50,18 @@ namespace LogoExt
             if (e.KeyChar == 13) {
                 if (listBox1.Items.Count > 0) {
                     listBox1.SelectedItem = listBox1.Items[0];
+                }
+            }
+        }
+
+        //When "Enter" Key is pressed and there is one item in listBox2 run query
+        private void TextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13 && listBox1.SelectedItem != null) {
+                if (textBox2.Text.Length > 0 && Int32.TryParse(textBox2.Text, out int result)) {
+                    if (result >= 0 && result <= 120) {
+                        Ekstre(result);
+                    }
                 }
             }
         }
@@ -157,6 +86,110 @@ namespace LogoExt
             }
         }
 
+
+        private void Ekstre(int vade)
+        {
+            DataTable payPlanDT;
+            Decimal bakiye = 0;
+            Decimal vadesiDolan = 0;
+            string alacakStr = " (A)";
+            string bakiyeStr = " (B)";
+
+            string vadeStr;
+            int latestVadeRow = -1;
+            if (listBox1.SelectedItem != null) {                
+                label1.Text = label2.Text = label3.Text = label4.Text = label5.Text = label6.Text = label8.Text = label10.Text = label11.Text = "";
+                label9.Visible = false;
+                textBox2.Visible = false;
+
+                DataTable firmDetailsDT = Global.Instance.query.QueryFirmDetails(listBox1.SelectedItem.ToString());
+                if (firmDetailsDT.Rows[0] != null) {
+                    label10.Text = firmDetailsDT.Rows[0][0].ToString();
+                    label10.Visible = true;
+                    label11.Text = firmDetailsDT.Rows[0][1].ToString() + " " + firmDetailsDT.Rows[0][2].ToString();
+                    label11.Visible = true;
+                }
+                DataTable dt = Global.Instance.query.QueryEkstre(listBox1.SelectedItem.ToString());
+                if (dt.Rows.Count == 0) {
+                    //TODO hiç row yoksa ekstre de yoktur ona göre bi geri bildirim yap
+                    dataGridView1.DataSource = null;
+                    dataGridView1.Visible = true;
+                    return;
+                }            
+                         
+                dt.Columns.Add("Bakiye", typeof(string));
+                dt.Columns.Add("Fiş türü", typeof(string));
+                dt.Columns.Add("Vade Tarihi", typeof(DateTime));
+
+                payPlanDT = Global.Instance.query.QueryVade(dt.Rows[dt.Rows.Count - 1]["PAYMENTREF"].ToString());
+                if (payPlanDT.Rows.Count != 0) {
+                    vadeStr = Regex.Match(payPlanDT.Rows[0]["DAY_"].ToString(), @"\d+").Value;
+                    if (vade == -1) {
+                        vade = Int32.Parse(vadeStr);
+                    }
+                    label1.Text = "Vade: ";
+                    label4.Text = vadeStr;
+                    label1.Visible = true;
+                    label4.Visible = true;
+                }                
+
+                dt.Rows[0]["Bakiye"] = "0";
+                foreach (DataRow row in dt.Rows) {
+                    row["Fiş Türü"] = ProcessFicheType(row["TRCODE"].ToString());
+                    row["Vade Tarihi"] = ProcessVadeDate(row, vade);
+
+
+                    if (row["Borç"] != null && row["Borç"].ToString().Length > 0) {
+                        bakiye += Decimal.Parse(row["Borç"].ToString(), CultureInfo.InvariantCulture);
+                        if (bakiye >= 0) {
+                            row["Bakiye"] = string.Format("{0:n}", Math.Floor(Math.Abs(bakiye) * 100) / 100) + bakiyeStr;
+                        }
+                        else {
+                            row["Bakiye"] = string.Format("{0:n}", Math.Floor(Math.Abs(bakiye) * 100) / 100) + alacakStr;
+                        }
+                    }
+                    else if (row["Alacak"] != null && row["Alacak"].ToString().Length > 0) {
+                        bakiye -= Decimal.Parse(row["Alacak"].ToString(), CultureInfo.InvariantCulture);
+                        if (bakiye >= 0) {
+                            row["Bakiye"] = string.Format("{0:n}", Math.Floor(Math.Abs(bakiye) * 100) / 100) + bakiyeStr;
+                        }
+                        else {
+                            row["Bakiye"] = string.Format("{0:n}", Math.Floor(Math.Abs(bakiye) * 100) / 100) + alacakStr;
+                        }
+                    }
+
+                    DateTime faturaTarihi = DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE"));
+                    double difference = (DateTime.Today - faturaTarihi).TotalDays;
+                    if (vade != 0) {
+                        if (difference >= vade && row["Bakiye"].ToString() != "") {
+                            latestVadeRow += 1;
+                            vadesiDolan = bakiye;
+                        }
+                        else if (difference < vade && row["Alacak"].ToString() != "") {
+                            vadesiDolan -= Decimal.Parse(row["Alacak"].ToString(), CultureInfo.InvariantCulture);
+                        }
+                    }                    
+                }
+                if (vade == 0) {
+                    vadesiDolan = Decimal.Parse(Regex.Match(dt.Rows[dt.Rows.Count-1]["Bakiye"].ToString().Replace(".", string.Empty), @"\d+.+\d").Value, CultureInfo.GetCultureInfo("fr-FR"));
+                }
+
+                dt.Columns.Add("Geçen Gün Sayısı");                                 
+                VadeAvarageCalculation(latestVadeRow, vadesiDolan, dt.Rows, vade);
+                dt.Columns.Remove("TRCODE");
+                dt.Columns.Remove("PAYMENTREF");
+                dt.Columns.Remove("SIGN");
+                dt.SetColumnsOrder("Tarih", "Fiş No", "Fiş Türü", "Vade Tarihi", "Açıklama", "Borç", "Alacak");
+                DataGridViewFormat(dt, latestVadeRow);
+       
+                label2.Text = "Vadesi Dolan: ";
+                label5.Text = vadesiDolan.ToString("#,###0.00");
+                label2.Visible = true;
+                label5.Visible = true;
+                label9.Visible = true;
+                textBox2.Visible = true;
+            }
+        }
         //Format "Tarih" Column, set visible to true, color the odd and even lines, and allign some of the rows
         private void DataGridViewFormat(DataTable dt, int latestVadeRow)
         {
@@ -164,10 +197,9 @@ namespace LogoExt
             dataGridView1.DataSource = new BindingSource(dt, null);
             dataGridView1.Visible = true;
 
-            DataGridLineColoring(Color.White, Color.WhiteSmoke);
-
-            int vade = Int32.Parse(Regex.Match(label4.Text, @"\d+").Value);
-            if (vade > 0) {
+            DataGridLineColoring(Color.White, Color.WhiteSmoke);            
+            
+            if (Int32.TryParse(Regex.Match(label4.Text, @"\d+").Value, out int vade) && vade > 0) {
                 foreach (DataGridViewRow row in dataGridView1.Rows) {
                     DateTime vadeDateTime = (DateTime)row.Cells[0].Value;
                     double difference = (DateTime.Today - vadeDateTime).TotalDays;
@@ -196,6 +228,7 @@ namespace LogoExt
             }                                             
             DataGridLineAlignment();
             dataGridView1.SetColumnSortMode(DataGridViewColumnSortMode.NotSortable);
+            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1; //scroll to bottom of datagridview
         }
 
         //color the table's odd and even lines
@@ -331,11 +364,10 @@ namespace LogoExt
             if (sign == 1 || trcode == 14) {
                 return DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE"));
             }
-
             return DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE")).AddDays(vade);
         }
 
-        private void VadeAvarageCalculation(int latestVadeRow, decimal vadesiDolan, DataRowCollection rows) {
+        private void VadeAvarageCalculation(int latestVadeRow, decimal vadesiDolan, DataRowCollection rows, int vade) {
             decimal borcTotal = 0, multTotal = 0;
             bool once = false;
             if (vadesiDolan > 1) {
@@ -344,11 +376,12 @@ namespace LogoExt
                     if (row["Borç"].ToString() != "") {
                         Decimal faturaTarihi = (Decimal)DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE")).ToOADate();
                         Decimal alacak = Decimal.Parse(row["Borç"].ToString(), CultureInfo.InvariantCulture);
-
+                        row["Geçen Gün Sayısı"] = (DateTime.Today.Subtract(DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE"))).TotalDays-vade).ToString();
                         if (!once) {
                             once = true;
                             vadeFinishRow = i;
                         }
+                        //artık vadesi dolan son satırdasın gerekli bilgileri ekrana yaz ve çık
                         if (vadesiDolan - alacak <= 0) {
                             borcTotal += vadesiDolan;
                             multTotal += faturaTarihi * vadesiDolan;
@@ -387,13 +420,22 @@ namespace LogoExt
             dataGridView1.Columns["Bakiye"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             //açıklama satırı çok uzun gelebiliyor. Genişliğini 130 a sabitle
             if (dataGridView1.Columns["Açıklama"].Width > 130) {
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dataGridView1.Columns["Açıklama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 dataGridView1.Columns["Açıklama"].Width = 130;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             }
         }
 
         private void OnCellMouseUp(object sender, MouseEventArgs e)
+        {
+            SumCellValues();
+        }
+
+        private void OnCellMouseLeave(object sender, EventArgs e)
+        {
+            SumCellValues();
+        }
+
+        private void SumCellValues()
         {
             int columnIndex = 0;
             decimal rowTotal = 0;
@@ -408,7 +450,7 @@ namespace LogoExt
                     if (dataGridView1.SelectedCells[i].Value != null && dataGridView1.SelectedCells[i].Value.ToString() != "") {
                         if (Decimal.TryParse(dataGridView1.SelectedCells[i].Value.ToString(), style, CultureInfo.InvariantCulture, out result)) {
                             rowTotal += result;
-                        }                        
+                        }
                     }
                 }
                 else {
@@ -416,7 +458,7 @@ namespace LogoExt
                     return;
                 }
             }
-            
+
             label8.Text = "Toplam: " + rowTotal.ToString();
             label8.Visible = true;
         }
