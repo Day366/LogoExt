@@ -46,7 +46,11 @@ namespace LogoExt
             DateTime date1 = dateTimePicker1.Value;
             DateTime date2 = dateTimePicker2.Value;
             DataTable dt = Global.Instance.query.QueryGTIB(this, date1, date2);
-
+            if (dt == null) {
+                //we probably got an exception from query. Do nothing.
+                ShowError("DB sorgusu null döndü");
+                return;
+            }    
             string fileName = "\\GTIP " + DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss") + ".xls"; 
             string directoryPath = Global.exePath + "\\gtip"; ;
             string fullPath = directoryPath + fileName; 
@@ -70,10 +74,7 @@ namespace LogoExt
             catch (Exception ex) {
                 Console.WriteLine(ex.Message + ": " + ex.StackTrace);
                 LogWriter.Instance.LogWrite(ex.Message + ": " + ex.StackTrace);
-
-                Global.Instance.ErrorNotification("GTIP Kodlarını alamadı: --- " + ex.Message);
-                pictureBox1.Image = errorImage;
-                pictureBox1.Show();
+                ShowError(ex.Message);
             }
         }
 
@@ -83,6 +84,7 @@ namespace LogoExt
          * 03100: Devide by 10
          * 04200: Devide by 5
          * 05500: Devide by 2
+         * 02: Bu bölünmiyecek ama illaki bişey yazmak lazım. yoksa query o satırı almıyor
          */
         private void AmountCorrection(DataTable dt)
         {
@@ -180,5 +182,11 @@ namespace LogoExt
             dt.Columns.Remove("CODE");
         }
 
+
+        private void ShowError(string message) {
+            Global.Instance.ErrorNotification("GTIP Kodlarını alamadı: --- " + message);
+            pictureBox1.Image = errorImage;
+            pictureBox1.Show();
+        }
     }
 }
