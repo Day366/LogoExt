@@ -110,6 +110,7 @@ namespace LogoExt
                     label11.Visible = true;
                 }
                 DataTable dt = Global.Instance.query.QueryEkstre(listBox1.SelectedItem.ToString());
+                if (dt == null) { return; }
                 if (dt.Rows.Count == 0) {
                     //TODO hiç row yoksa ekstre de yoktur ona göre bi geri bildirim yap
                     dataGridView1.DataSource = null;
@@ -180,7 +181,7 @@ namespace LogoExt
                 dt.Columns.Remove("PAYMENTREF");
                 dt.Columns.Remove("SIGN");
                 dt.SetColumnsOrder("Tarih", "Fiş No", "Fiş Türü", "Vade Tarihi", "Açıklama", "Borç", "Alacak");
-                DataGridViewFormat(dt, latestVadeRow);
+                DataGridViewFormat(dt, latestVadeRow, vade);
        
                 label2.Text = "Vadesi Dolan: ";
                 label5.Text = vadesiDolan.ToString("#,###0.00");
@@ -191,7 +192,7 @@ namespace LogoExt
             }
         }
         //Format "Tarih" Column, set visible to true, color the odd and even lines, and allign some of the rows
-        private void DataGridViewFormat(DataTable dt, int latestVadeRow)
+        private void DataGridViewFormat(DataTable dt, int latestVadeRow, int vade)
         {
             DataTableExt.ConvertColumnType(dt, "Tarih");
             dataGridView1.DataSource = new BindingSource(dt, null);
@@ -199,7 +200,7 @@ namespace LogoExt
 
             DataGridLineColoring(Color.White, Color.WhiteSmoke);            
             
-            if (Int32.TryParse(Regex.Match(label4.Text, @"\d+").Value, out int vade) && vade > 0) {
+            if (vade > 0) {
                 foreach (DataGridViewRow row in dataGridView1.Rows) {
                     DateTime vadeDateTime = (DateTime)row.Cells[0].Value;
                     double difference = (DateTime.Today - vadeDateTime).TotalDays;
@@ -382,7 +383,7 @@ namespace LogoExt
                             vadeFinishRow = i;
                         }
                         //artık vadesi dolan son satırdasın gerekli bilgileri ekrana yaz ve çık
-                        if (vadesiDolan - alacak <= 0) {
+                        if (vadesiDolan - alacak <= 1) {
                             borcTotal += vadesiDolan;
                             multTotal += faturaTarihi * vadesiDolan;
                             label3.Text = "V. Geçen Ort. Hsb: ";

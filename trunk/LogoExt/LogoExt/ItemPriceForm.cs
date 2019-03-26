@@ -210,20 +210,12 @@ namespace LogoExt
         private void QueryItemPriceByFirmAndItem(ListBox listBox1, ListBox listBox2)
         {
             DataTable dt = Global.Instance.query.QueryItemPriceByFirmAndItem(this, listBox1.SelectedItem.ToString(), listBox2.SelectedItem.ToString());
-            if (dt == null) {
-                //TODO dataGridVİew Dolmicak ekrana hata ver
-                return;
-            }
             DataGridViewFormat(dt);
         }
 
         //Fills the "dataGridView1" according to given "FirmCode"
         private void QueryItemPriceByFirm(ListBox listBox1) {
             DataTable dt = Global.Instance.query.QueryItemPriceByFirm(this, listBox1.SelectedItem.ToString());
-            if (dt == null) {
-                //TODO dataGridVİew Dolmicak ekrana hata ver
-                return;
-            }
             DataGridViewFormat(dt);
         }
 
@@ -231,16 +223,13 @@ namespace LogoExt
         //Fills the "dataGridView1" according to given "FirmCode"
         private void QueryItemPriceByItem(ListBox listBox1) {
             DataTable dt = Global.Instance.query.QueryItemPriceByItem(this, listBox1.SelectedItem.ToString());
-            if (dt == null) {
-                //TODO dataGridVİew Dolmicak ekrana hata ver
-                return;
-            }
             DataGridViewFormat(dt);
         }
 
         //Format "Tarih" Column, set visible to true, color the odd and even lines, and allign some of the rows
         private void DataGridViewFormat(DataTable dt)
         {
+            if (dt == null) { return; }     //we probably got an exception from query. Do nothing.
             DataTableExt.ConvertColumnType(dt, "Tarih");
             dataGridView1.DataSource = new BindingSource(dt, null);
             dataGridView1.Visible = true;
