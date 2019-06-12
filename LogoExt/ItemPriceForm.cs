@@ -37,7 +37,7 @@ namespace LogoExt
                     listBox1.Items.Add("20" + year);
                 }
             }
-            listBox1.SetSelected(1, true);
+            listBox1.SetSelected(0, true);
             dataGridView1.CellMouseUp += OnCellMouseUp;
             dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
         }

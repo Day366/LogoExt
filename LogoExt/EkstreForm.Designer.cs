@@ -286,7 +286,7 @@ namespace LogoExt
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
             this.Name = "EkstreForm";
-            this.Text = "EkstreForm";
+            this.Text = "Ekstre";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

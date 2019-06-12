@@ -117,10 +117,12 @@ namespace LogoExt
             // tabForms
             // 
             this.tabForms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabForms.ItemSize = new System.Drawing.Size(145, 18);
             this.tabForms.Location = new System.Drawing.Point(0, 0);
             this.tabForms.Name = "tabForms";
             this.tabForms.SelectedIndex = 0;
             this.tabForms.Size = new System.Drawing.Size(919, 644);
+            this.tabForms.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabForms.TabIndex = 0;
             // 
             // panelNotification

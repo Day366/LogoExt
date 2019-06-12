@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace LogoExt
 {
@@ -13,6 +14,7 @@ namespace LogoExt
     {
         private int vadeStartRow = -1;
         private int vadeFinishRow = -1;
+        private Timer BackColorTimer = new Timer();
         public EkstreForm()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace LogoExt
             dataGridView1.CellMouseUp += OnCellMouseUp;
             dataGridView1.MouseLeave += OnCellMouseLeave;
             textBox2.KeyPress += new KeyPressEventHandler(TextBox2_KeyPress);
+            label5.MouseDown += new MouseEventHandler(Label5_MouseDown);
             dataGridView1.DoubleBuffered(true);
             label4.BringToFront();
             label5.BringToFront();
@@ -66,6 +69,31 @@ namespace LogoExt
             }
         }
 
+        //When Label5 is clicked, copy the value and give a indication with backColor change
+        private void Label5_MouseDown(object sender, MouseEventArgs e)
+        {
+            label5.BackColor = Color.LightSkyBlue;
+            Clipboard.SetText(label5.Text);
+            BackColorTimer.Interval = 50;       //to make the fade transition more smoother change Interval from 100 to 50
+            BackColorTimer.Tick += new EventHandler(TimerRemoveBackColor);
+            BackColorTimer.Start();
+        }
+
+        //fade the alpha value of BackColor 
+        private void TimerRemoveBackColor(object sender, EventArgs eArgs)
+        {
+            int fadingSpeed = 10;
+
+            if (label5.BackColor.A - fadingSpeed < 0) {
+                BackColorTimer.Stop();
+                BackColorTimer.Tick -= new EventHandler(TimerRemoveBackColor);
+            }
+            else {
+                label5.BackColor = Color.FromArgb(label5.BackColor.A - fadingSpeed, label5.BackColor.R, label5.BackColor.G, label5.BackColor.B);
+            }
+        }
+
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (textBox1.TextLength > 1) {
@@ -99,6 +127,9 @@ namespace LogoExt
             int latestVadeRow = -1;
             if (listBox1.SelectedItem != null) {                
                 label1.Text = label2.Text = label3.Text = label4.Text = label5.Text = label6.Text = label8.Text = label10.Text = label11.Text = "";
+                if (vade == -1) { //if vade == -1 listBox tan bir firma seçilerek çağrılmış demek. o durumda elle girilen vade kutusunu boşalt
+                    textBox2.Text = "";
+                }
                 label9.Visible = false;
                 textBox2.Visible = false;
 
@@ -176,7 +207,9 @@ namespace LogoExt
                 }
 
                 dt.Columns.Add("Geçen Gün Sayısı");                                 
-                VadeAvarageCalculation(latestVadeRow, vadesiDolan, dt.Rows, vade);
+                VadeAverageCalculation(ref latestVadeRow, vadesiDolan, dt.Rows, vade);
+                VadePassedRemainingCalculation(latestVadeRow, dt.Rows, vade);
+
                 dt.Columns.Remove("TRCODE");
                 dt.Columns.Remove("PAYMENTREF");
                 dt.Columns.Remove("SIGN");
@@ -368,7 +401,7 @@ namespace LogoExt
             return DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE")).AddDays(vade);
         }
 
-        private void VadeAvarageCalculation(int latestVadeRow, decimal vadesiDolan, DataRowCollection rows, int vade) {
+        private void VadeAverageCalculation(ref int latestVadeRow, decimal vadesiDolan, DataRowCollection rows, int vade) {
             decimal borcTotal = 0, multTotal = 0;
             bool once = false;
             if (vadesiDolan > 1) {
@@ -377,7 +410,7 @@ namespace LogoExt
                     if (row["Borç"].ToString() != "") {
                         Decimal faturaTarihi = (Decimal)DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE")).ToOADate();
                         Decimal alacak = Decimal.Parse(row["Borç"].ToString(), CultureInfo.InvariantCulture);
-                        row["Geçen Gün Sayısı"] = (DateTime.Today.Subtract(DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE"))).TotalDays-vade).ToString();
+                        row["Geçen Gün Sayısı"] = (DateTime.Today.Subtract(DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE"))).TotalDays - vade).ToString();
                         if (!once) {
                             once = true;
                             vadeFinishRow = i;
@@ -408,7 +441,26 @@ namespace LogoExt
                         }
                     }
                 }
-            }            
+            }
+            else {
+                // vade negative ise latestVadeRow vadesi dolmuş kısımlarıda gösteriyor. Negative ise adamlar fazladan ödemiş demek, 
+                // bu kısım normal renkte kalmalı ve "Geçen Gün Sayısı" artı sayılar yazılmamalı
+                if (rows.Count > (latestVadeRow + 1)) {
+                    latestVadeRow += 1;
+                }
+            }
+        }
+
+        //"Geçen Gün Sayısı" kısmına eksi değerleri giriyor. artı değerler "VadeAverageCalculation(...)" fonksiyonunda giriliyor. 
+        //Vade sonuna kaç gün kaldığını gösteriyor
+        private void VadePassedRemainingCalculation(int latestVadeRow, DataRowCollection rows, int vade)
+        {
+            for (int i = latestVadeRow; i >= 0 && i < rows.Count; i++) {
+                DataRow row = rows[i];
+                if (row["Borç"].ToString() != "") {
+                        row["Geçen Gün Sayısı"] = (DateTime.Today.Subtract(DateTime.ParseExact(row["Tarih"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE"))).TotalDays - vade).ToString();                                  
+                }
+            }
         }
 
         //allign some of the rows to right
@@ -460,7 +512,7 @@ namespace LogoExt
                 }
             }
 
-            label8.Text = "Toplam: " + rowTotal.ToString();
+            label8.Text = "Toplam: " + rowTotal.ToString("#,###0.00");
             label8.Visible = true;
         }
     }

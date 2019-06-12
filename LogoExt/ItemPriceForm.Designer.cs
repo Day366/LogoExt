@@ -189,7 +189,7 @@ namespace LogoExt
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Name = "ItemPriceForm";
-            this.Text = "ItemPriceForm";
+            this.Text = "Malzeme Birim Fiyatı";
             this.TransparencyKey = System.Drawing.Color.White;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
