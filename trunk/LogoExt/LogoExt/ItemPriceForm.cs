@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -24,6 +22,7 @@ namespace LogoExt
             listBox3.Items.Clear();
             textBox1.KeyPress += new KeyPressEventHandler(TextBox1_KeyPress);
             textBox2.KeyPress += new KeyPressEventHandler(TextBox2_KeyPress);
+            textBox3.KeyPress += new KeyPressEventHandler(TextBox3_KeyPress);
             dataGridView1.ColumnHeaderMouseClick += dataGridView1_SelectionChanged;
             dataGridView1.DoubleBuffered(true);
 
@@ -129,7 +128,7 @@ namespace LogoExt
             }
             else if (listBox2.SelectedItem != null) {
                 QueryItemPriceByItem(listBox2);
-            }
+            }           
         }
 
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,6 +138,22 @@ namespace LogoExt
             }
             else if (listBox3.SelectedItem != null) {
                 QueryItemPriceByFirm(listBox3);
+            }           
+        }
+
+        private void QueryLastTenYearsItemOrFirm() {
+            DataTable dt;
+            if (listBox2.SelectedItem != null && listBox3.SelectedItem != null) {
+                dt = Global.Instance.query.QueryPastTenYearsPriceByItemAndFirm(this, listBox2.SelectedItem.ToString(), listBox3.SelectedItem.ToString());
+                DataGridViewFormat(dt);
+            }
+            else if (listBox2.SelectedItem != null) {
+                dt = Global.Instance.query.QueryPastTenYearsPriceByItem(this, listBox2.SelectedItem.ToString());
+                DataGridViewFormat(dt);
+            }
+            else if (listBox3.SelectedItem != null) {
+                dt = Global.Instance.query.QueryPastTenYearsPriceByFirm(this, listBox3.SelectedItem.ToString());
+                DataGridViewFormat(dt);
             }
         }
 
@@ -180,6 +195,19 @@ namespace LogoExt
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox3.Clear();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (textBox3.Text != "") {
+                DataTable dt = Global.Instance.query.QueryPastTenYearsPriceByDetails(this, textBox3.Text);
+                DataGridViewFormat(dt);
+            }
+        }
+
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             DataGridLineColoring();
@@ -205,6 +233,16 @@ namespace LogoExt
             }
         }
 
+        //When "Enter" Key is pressed search for details
+        private void TextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                if (textBox3.Text != "") {
+                    QueryItemPriceByDetail(textBox3);              
+                }
+            }
+        }
+
 
         //Fills the "dataGridView1" according to given "FirmCode" and "ItemCode"
         private void QueryItemPriceByFirmAndItem(ListBox listBox1, ListBox listBox2)
@@ -219,6 +257,13 @@ namespace LogoExt
             DataGridViewFormat(dt);
         }
 
+        
+        //Fills the "dataGridView1" according to given "FirmCode"
+        private void QueryItemPriceByDetail(TextBox textBox3)
+        {
+            DataTable dt = Global.Instance.query.QueryItemPriceByDetail(this, textBox3.Text);
+            DataGridViewFormat(dt);
+        }
 
         //Fills the "dataGridView1" according to given "FirmCode"
         private void QueryItemPriceByItem(ListBox listBox1) {
@@ -286,5 +331,6 @@ namespace LogoExt
             label3.Text = "Toplam: " + rowTotal.ToString();
             label3.Visible = true;
         }
+
     }
 }
