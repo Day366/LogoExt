@@ -218,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eral.ico" />
+    <None Include="Properties\Resources\rightArrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
