@@ -15,6 +15,7 @@ namespace LogoExt
         private int vadeStartRow = -1;
         private int vadeFinishRow = -1;
         private Timer BackColorTimer = new Timer();
+        private Timer BackColorTimer2 = new Timer();
         public EkstreForm()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace LogoExt
             dataGridView1.MouseLeave += OnCellMouseLeave;
             textBox2.KeyPress += new KeyPressEventHandler(TextBox2_KeyPress);
             label5.MouseDown += new MouseEventHandler(Label5_MouseDown);
+            label10.MouseDown += new MouseEventHandler(Label10_MouseDown);
             dataGridView1.DoubleBuffered(true);
             label4.BringToFront();
             label5.BringToFront();
@@ -75,24 +77,47 @@ namespace LogoExt
             label5.BackColor = Color.LightSkyBlue;
             Clipboard.SetText(label5.Text);
             BackColorTimer.Interval = 50;       //to make the fade transition more smoother change Interval from 100 to 50
-            BackColorTimer.Tick += new EventHandler(TimerRemoveBackColor);
+            BackColorTimer.Tick += new EventHandler(TimerRemoveBackColorLabel5);
             BackColorTimer.Start();
         }
 
+        //When Label5 is clicked, copy the value and give a indication with backColor change
+        private void Label10_MouseDown(object sender, MouseEventArgs e)
+        {
+            label10.BackColor = Color.LightSkyBlue;
+            Clipboard.SetText(label10.Text);
+            BackColorTimer2.Interval = 50;       //to make the fade transition more smoother change Interval from 100 to 50
+            BackColorTimer2.Tick += new EventHandler(TimerRemoveBackColorLabel10);
+            BackColorTimer2.Start();
+        }
+
         //fade the alpha value of BackColor 
-        private void TimerRemoveBackColor(object sender, EventArgs eArgs)
+        private void TimerRemoveBackColorLabel5(object sender, EventArgs eArgs)
         {
             int fadingSpeed = 10;
 
             if (label5.BackColor.A - fadingSpeed < 0) {
                 BackColorTimer.Stop();
-                BackColorTimer.Tick -= new EventHandler(TimerRemoveBackColor);
+                BackColorTimer.Tick -= new EventHandler(TimerRemoveBackColorLabel5);
             }
             else {
                 label5.BackColor = Color.FromArgb(label5.BackColor.A - fadingSpeed, label5.BackColor.R, label5.BackColor.G, label5.BackColor.B);
             }
         }
 
+        //fade the alpha value of BackColor 
+        private void TimerRemoveBackColorLabel10(object sender, EventArgs eArgs)
+        {
+            int fadingSpeed = 10;
+
+            if (label10.BackColor.A - fadingSpeed < 0) {
+                BackColorTimer2.Stop();
+                BackColorTimer2.Tick -= new EventHandler(TimerRemoveBackColorLabel10);
+            }
+            else {
+                label10.BackColor = Color.FromArgb(label10.BackColor.A - fadingSpeed, label10.BackColor.R, label10.BackColor.G, label10.BackColor.B);
+            }
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -126,7 +151,8 @@ namespace LogoExt
             string vadeStr;
             int latestVadeRow = -1;
             if (listBox1.SelectedItem != null) {                
-                label1.Text = label2.Text = label3.Text = label4.Text = label5.Text = label6.Text = label8.Text = label10.Text = label11.Text = "";
+                label1.Text = label2.Text = label3.Text = label4.Text = label5.Text = label6.Text = label8.Text = label10.Text = label11.Text = label12.Text = label13.Text = "";
+                label12.Visible = label13.Visible = false;
                 if (vade == -1) { //if vade == -1 listBox tan bir firma seçilerek çağrılmış demek. o durumda elle girilen vade kutusunu boşalt
                     textBox2.Text = "";
                 }
@@ -144,14 +170,14 @@ namespace LogoExt
                 if (dt == null) { return; }
                 if (dt.Rows.Count == 0) {
                     //TODO hiç row yoksa ekstre de yoktur ona göre bi geri bildirim yap
+                    Global.Instance.ErrorNotification("İşlem yok");
                     dataGridView1.DataSource = null;
                     dataGridView1.Visible = true;
                     return;
                 }            
                          
                 dt.Columns.Add("Bakiye", typeof(string));
-                dt.Columns.Add("Fiş türü", typeof(string));
-                dt.Columns.Add("Vade Tarihi", typeof(DateTime));
+                dt.Columns.Add("Fiş Türü", typeof(string));
 
                 payPlanDT = Global.Instance.query.QueryVade(dt.Rows[dt.Rows.Count - 1]["PAYMENTREF"].ToString());
                 if (payPlanDT.Rows.Count != 0) {
@@ -168,8 +194,7 @@ namespace LogoExt
                 dt.Rows[0]["Bakiye"] = "0";
                 foreach (DataRow row in dt.Rows) {
                     row["Fiş Türü"] = ProcessFicheType(row["TRCODE"].ToString());
-                    row["Vade Tarihi"] = ProcessVadeDate(row, vade);
-
+             //       row["Vade Tarihi"] = ProcessVadeDate(row, vade);
 
                     if (row["Borç"] != null && row["Borç"].ToString().Length > 0) {
                         bakiye += Decimal.Parse(row["Borç"].ToString(), CultureInfo.InvariantCulture);
@@ -209,19 +234,19 @@ namespace LogoExt
                 dt.Columns.Add("Geçen Gün Sayısı");                                 
                 VadeAverageCalculation(ref latestVadeRow, vadesiDolan, dt.Rows, vade);
                 VadePassedRemainingCalculation(latestVadeRow, dt.Rows, vade);
+                label13.Text = RealVadeCalculation(bakiye, dt.Rows, vade).ToString("#,###0.00");
 
                 dt.Columns.Remove("TRCODE");
                 dt.Columns.Remove("PAYMENTREF");
                 dt.Columns.Remove("SIGN");
                 dt.SetColumnsOrder("Tarih", "Fiş No", "Fiş Türü", "Vade Tarihi", "Açıklama", "Borç", "Alacak");
                 DataGridViewFormat(dt, latestVadeRow, vade);
-       
+                
+
                 label2.Text = "Vadesi Dolan: ";
+                label12.Text = "Toplam Bakiye: ";
                 label5.Text = vadesiDolan.ToString("#,###0.00");
-                label2.Visible = true;
-                label5.Visible = true;
-                label9.Visible = true;
-                textBox2.Visible = true;
+                textBox2.Visible = label2.Visible = label5.Visible = label9.Visible = true;
             }
         }
         //Format "Tarih" Column, set visible to true, color the odd and even lines, and allign some of the rows
@@ -386,7 +411,7 @@ namespace LogoExt
                     ficheType = "Firma Kredi Kartı İade Fişi";
                     break;
                 default:
-                    ficheType += " <------------------------------------------HATA VAR*******************************************";
+                    ficheType += " <----HATA VAR---->";
                     break;
             }
             return ficheType;
@@ -476,6 +501,22 @@ namespace LogoExt
                 dataGridView1.Columns["Açıklama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 dataGridView1.Columns["Açıklama"].Width = 130;
             }
+        }
+
+        private decimal RealVadeCalculation(decimal bakiye, DataRowCollection rows, int vade) {
+            foreach (DataRow row in rows) {
+                int trcode = int.Parse(row["TRCODE"].ToString());
+                if (trcode == 61) {
+                    DateTime faturaTarihi = DateTime.ParseExact(row["Vade Tarihi"].ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE"));
+                    double difference = (DateTime.Today - faturaTarihi).TotalDays;
+
+                    if (difference < 0) {
+                        bakiye = bakiye + Decimal.Parse(row["Alacak"].ToString(), CultureInfo.InvariantCulture);
+                        label12.Visible = label13.Visible = true;
+                    }
+                }
+            }
+            return bakiye;
         }
 
         private void OnCellMouseUp(object sender, MouseEventArgs e)

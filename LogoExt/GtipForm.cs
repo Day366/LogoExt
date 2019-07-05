@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExcelLibrary.SpreadSheet;
+using System;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
@@ -40,7 +41,7 @@ namespace LogoExt
             checkImage = Properties.Resources.check;
             errorImage = Properties.Resources.error;
         }
-
+/*
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime date1 = dateTimePicker1.Value;
@@ -76,6 +77,76 @@ namespace LogoExt
                 LogWriter.Instance.LogWrite(ex.Message + ": " + ex.StackTrace);
                 ShowError(ex.Message);
             }
+        }
+*/
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Workbook workbook = new Workbook();
+            DateTime date1 = dateTimePicker1.Value;
+            DateTime date2 = dateTimePicker2.Value;
+            DataTable dt1 = Global.Instance.query.QueryBCetveliTeslimGTIP(this, date1, date2);
+            DataTable dt2 = Global.Instance.query.QueryBCetveliUrunlerGTIP(this, date1, date2); 
+            DataTable dt3 = Global.Instance.query.QueryBCetveliMallarGTIP(this, date1, date2);
+            DataTable dt4 = Global.Instance.query.QueryAyrintiliRaporGTIP(this, date1, date2);
+            DataTable dt5 = Global.Instance.query.QuerySarfFisleriGTIP(this, date1, date2);
+
+            if (dt1 == null) {
+                //we probably got an exception from query. Do nothing.
+                ShowError("DB sorgusu null döndü");
+                return;
+            }
+            string fileName = "\\GTIP " + DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss") + ".xls";
+            string directoryPath = Global.exePath + "\\gtip"; ;
+            string fullPath = directoryPath + fileName;
+
+            try {
+                if (!Directory.Exists(directoryPath)) {         //if directory doesn't exists create the "gtip" folder
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                AmountCorrection(dt1);
+                LineMerge(dt1);
+                //TotalCollumnFix(dt);  //suatın her satırı hesaplaması gibi ama buna gerek yok dediler "şimdilik"
+                ChangeCollumnName(dt1);
+
+
+                CreateWorkbook(workbook, dt1);
+                CreateWorkbook(workbook, dt2);
+                CreateWorkbook(workbook, dt3);
+                CreateWorkbook(workbook, dt4);
+                CreateWorkbook(workbook, dt5);
+
+
+                //   dt.WriteXml(fullPath);
+                workbook.Save(fullPath);
+                Process.Start(fullPath);
+
+                pictureBox1.Image = checkImage;
+                pictureBox1.Show();
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message + ": " + ex.StackTrace);
+                LogWriter.Instance.LogWrite(ex.Message + ": " + ex.StackTrace);
+                ShowError(ex.Message);
+            }
+        }
+
+        public static void CreateWorkbook(Workbook workbook, DataTable dt)
+        {
+            Worksheet worksheet = new Worksheet(dt.TableName);
+            for (int i = 0; i < dt.Columns.Count; i++) {
+                // Add column header
+                worksheet.Cells[0, i] = new Cell(dt.Columns[i].ColumnName);
+
+                // Populate row data
+                for (int j = 0, k = 0; j < dt.Rows.Count; k++) {
+                    if (dt.Rows[k][i] != null) {
+                        worksheet.Cells[j + 1, i] = new Cell(dt.Rows[k][i]);
+                        j++;
+                    }
+                }
+            }
+            workbook.Worksheets.Add(worksheet);
         }
 
         /*
@@ -129,6 +200,7 @@ namespace LogoExt
                 }
                 previousDr = currentDr;
             }
+            dt.AcceptChanges();            
         }
 
         /*

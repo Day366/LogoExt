@@ -45,6 +45,8 @@ namespace LogoExt
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +104,7 @@ namespace LogoExt
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SlateGray;
-            this.label1.Location = new System.Drawing.Point(204, 103);
+            this.label1.Location = new System.Drawing.Point(204, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 23);
             this.label1.TabIndex = 14;
@@ -117,7 +119,7 @@ namespace LogoExt
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SlateGray;
-            this.label2.Location = new System.Drawing.Point(204, 126);
+            this.label2.Location = new System.Drawing.Point(204, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 23);
             this.label2.TabIndex = 15;
@@ -132,7 +134,7 @@ namespace LogoExt
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SlateGray;
-            this.label3.Location = new System.Drawing.Point(204, 149);
+            this.label3.Location = new System.Drawing.Point(204, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 23);
             this.label3.TabIndex = 16;
@@ -147,7 +149,7 @@ namespace LogoExt
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SlateGray;
-            this.label4.Location = new System.Drawing.Point(362, 103);
+            this.label4.Location = new System.Drawing.Point(377, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 23);
             this.label4.TabIndex = 17;
@@ -162,7 +164,7 @@ namespace LogoExt
             this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SlateGray;
-            this.label5.Location = new System.Drawing.Point(362, 126);
+            this.label5.Location = new System.Drawing.Point(377, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 23);
             this.label5.TabIndex = 18;
@@ -177,7 +179,7 @@ namespace LogoExt
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SlateGray;
-            this.label6.Location = new System.Drawing.Point(362, 149);
+            this.label6.Location = new System.Drawing.Point(377, 126);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 23);
             this.label6.TabIndex = 19;
@@ -264,11 +266,43 @@ namespace LogoExt
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label11.Visible = false;
             // 
+            // label12
+            // 
+            this.label12.AutoEllipsis = true;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.Control;
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.SlateGray;
+            this.label12.Location = new System.Drawing.Point(204, 103);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 23);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "label12";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label12.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoEllipsis = true;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.Control;
+            this.label13.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.SlateGray;
+            this.label13.Location = new System.Drawing.Point(377, 103);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 23);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "label13";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label13.Visible = false;
+            // 
             // EkstreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 555);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox2);
@@ -311,6 +345,8 @@ namespace LogoExt
         private Label label9;
         private Label label10;
         private Label label11;
+        private Label label12;
+        private Label label13;
 
         public DataGridView DataGridView1 { get => dataGridView1; set => dataGridView1 = value; }
     }
