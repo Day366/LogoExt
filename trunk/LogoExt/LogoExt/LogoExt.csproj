@@ -66,6 +66,9 @@
     <ApplicationIcon>Properties\Resources\eral.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExcelLibrary">
+      <HintPath>.\ExcelLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.7\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
     </Reference>
@@ -126,6 +129,12 @@
     <Compile Include="ItemPriceForm.Designer.cs">
       <DependentUpon>ItemPriceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemsForm.Designer.cs">
+      <DependentUpon>ItemsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogWriter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -152,8 +161,12 @@
     <EmbeddedResource Include="ItemPriceForm.resx">
       <DependentUpon>ItemPriceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ItemsForm.resx">
+      <DependentUpon>ItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -218,6 +231,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eral.ico" />
+    <None Include="Properties\Resources\pin.png" />
+    <EmbeddedResource Include="ExcelLibrary.dll" />
     <None Include="Properties\Resources\rightArrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

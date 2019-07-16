@@ -156,8 +156,7 @@ namespace LogoExt
                 DataGridViewFormat(dt);
             }
         }
-
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Length > 0) {
@@ -202,7 +201,11 @@ namespace LogoExt
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (textBox3.Text != "") {
+            if (listBox3.SelectedItem != null && textBox3.Text != "") {
+                DataTable dt = Global.Instance.query.QueryPastTenYearsPriceByDetailAndFirm(this, textBox3.Text, listBox3.SelectedItem.ToString());
+                DataGridViewFormat(dt);
+            }
+            else if (textBox3.Text != "") {
                 DataTable dt = Global.Instance.query.QueryPastTenYearsPriceByDetails(this, textBox3.Text);
                 DataGridViewFormat(dt);
             }
@@ -237,8 +240,11 @@ namespace LogoExt
         private void TextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
-                if (textBox3.Text != "") {
-                    QueryItemPriceByDetail(textBox3);              
+                if (textBox3.Text != "" && listBox3.SelectedItem != null) {
+                    QueryItemPriceByDetailAndFirm(textBox3, listBox3);
+                }
+                else if(textBox3.Text != "") {
+                    QueryItemPriceByDetail(textBox3);                    
                 }
             }
         }
@@ -257,11 +263,19 @@ namespace LogoExt
             DataGridViewFormat(dt);
         }
 
-        
-        //Fills the "dataGridView1" according to given "FirmCode"
+
+        //Fills the "dataGridView1" according to given "Details"
         private void QueryItemPriceByDetail(TextBox textBox3)
         {
             DataTable dt = Global.Instance.query.QueryItemPriceByDetail(this, textBox3.Text);
+            DataGridViewFormat(dt);
+        }
+        
+
+        //Fills the "dataGridView1" according to given "FirmCode" and "Details"
+        private void QueryItemPriceByDetailAndFirm(TextBox textBox3, ListBox listBox1)
+        {
+            DataTable dt = Global.Instance.query.QueryItemPriceByDetailAndFirm(this, textBox3.Text, listBox1.SelectedItem.ToString());
             DataGridViewFormat(dt);
         }
 
