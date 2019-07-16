@@ -41,6 +41,7 @@ namespace LogoExt
         public static string GTIPFORM = "GtipForm";
         public static string ITEMPRICEFORM = "ItemPriceForm";
         public static string EKSTREFORM = "EkstreForm";
+        public static string ITEMSFORM = "ItemsForm";
 
         public static string DIRECTORYPATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\LogoExt";
         public static string FILENAME = "\\settings.json";

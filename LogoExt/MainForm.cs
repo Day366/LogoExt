@@ -34,6 +34,9 @@ namespace LogoExt
             else if (Global.Instance.settings.DefaultForm == Global.EKSTREFORM) {
                 OpenEkstreForm();
             }
+            else if (Global.Instance.settings.DefaultForm == Global.ITEMSFORM) {
+                OpenItemsForm();
+            }
         }
         
         private void ParseSettings()

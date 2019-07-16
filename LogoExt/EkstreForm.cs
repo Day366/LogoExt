@@ -23,6 +23,7 @@ namespace LogoExt
 
         protected override void OnLoad(EventArgs e)
         {
+            
             textBox1.KeyPress += new KeyPressEventHandler(TextBox1_KeyPress);
             dataGridView1.CellMouseUp += OnCellMouseUp;
             dataGridView1.MouseLeave += OnCellMouseLeave;
@@ -35,6 +36,12 @@ namespace LogoExt
             label6.BringToFront();
             textBox2.BringToFront();
             dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+        }
+
+        //Focus textBox1 when form is shown
+        private void EkstreFormShown(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
         }
 
         private void button1_Click(object sender, EventArgs e)

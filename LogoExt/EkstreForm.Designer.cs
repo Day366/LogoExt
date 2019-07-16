@@ -321,6 +321,7 @@ namespace LogoExt
             this.Controls.Add(this.textBox1);
             this.Name = "EkstreForm";
             this.Text = "Ekstre";
+            this.VisibleChanged += new System.EventHandler(this.EkstreFormShown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
