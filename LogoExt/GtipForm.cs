@@ -90,9 +90,9 @@ namespace LogoExt
             DataTable dt4 = Global.Instance.query.QueryAyrintiliRaporGTIP(this, date1, date2);
             DataTable dt5 = Global.Instance.query.QuerySarfFisleriGTIP(this, date1, date2);
 
-            if (dt1 == null) {
+            if (dt1 == null || dt2 == null || dt3 == null || dt4 == null || dt5 == null) {
                 //we probably got an exception from query. Do nothing.
-                ShowError("DB sorgusu null döndü");
+                ShowError("DB sorgusu boş döndü. DB bağlantı sorunu var");
                 return;
             }
             string fileName = "\\GTIP " + DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss") + ".xls";

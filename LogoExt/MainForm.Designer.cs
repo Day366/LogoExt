@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace LogoExt
 {
@@ -33,6 +34,7 @@ namespace LogoExt
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,6 +45,8 @@ namespace LogoExt
             this.labelWarningBody = new System.Windows.Forms.Label();
             this.timerSlideIn = new System.Windows.Forms.Timer(this.components);
             this.timerSlideOut = new System.Windows.Forms.Timer(this.components);
+            this.timerPanel = new System.Windows.Forms.Timer(this.components);
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,6 +62,8 @@ namespace LogoExt
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button7);
+            this.splitContainer1.Panel1.Controls.Add(this.button6);
             this.splitContainer1.Panel1.Controls.Add(this.button5);
             this.splitContainer1.Panel1.Controls.Add(this.button4);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
@@ -69,6 +75,21 @@ namespace LogoExt
             this.splitContainer1.Size = new System.Drawing.Size(1109, 644);
             this.splitContainer1.SplitterDistance = 186;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(0, 598);
+            this.button6.Name = "button6";
+            this.button6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button6.Size = new System.Drawing.Size(186, 23);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Üste Sabitle";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -141,9 +162,10 @@ namespace LogoExt
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackgroundImage = global::LogoExt.Properties.Resources.close;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(1086, 3);
+            this.button3.Location = new System.Drawing.Point(1066, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(20, 20);
+            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button3.Size = new System.Drawing.Size(40, 40);
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -154,7 +176,7 @@ namespace LogoExt
             this.labelWarningBody.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWarningBody.Location = new System.Drawing.Point(0, -35);
             this.labelWarningBody.Name = "labelWarningBody";
-            this.labelWarningBody.Size = new System.Drawing.Size(1109, 70);
+            this.labelWarningBody.Size = new System.Drawing.Size(1060, 70);
             this.labelWarningBody.TabIndex = 1;
             this.labelWarningBody.Text = "label2";
             this.labelWarningBody.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,6 +190,21 @@ namespace LogoExt
             // 
             this.timerSlideOut.Interval = 1;
             this.timerSlideOut.Tick += new System.EventHandler(this.timerSlideOut_Tick);
+            // 
+            // timerPanel
+            // 
+            this.timerPanel.Interval = 1;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.Location = new System.Drawing.Point(0, 69);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(186, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Malzeme Hareketleri";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MainForm
             // 
@@ -202,10 +239,15 @@ namespace LogoExt
         private Button button3;
         private Button button4;
         private Button button5;
+        private Timer timerPanel;
+        private Button button6;
+        private Image pinImage;
+        private Button button7;
 
         public Label LabelWarningBody { get => labelWarningBody; set => labelWarningBody = value; }
 
         public Timer TimerSlideIn { get => timerSlideIn; set => timerSlideIn = value; }
         public Timer TimerSlideOut { get => timerSlideOut; set => timerSlideOut = value; }
+        public Image PinImage { get => pinImage; set => pinImage = value; }
     }
 }

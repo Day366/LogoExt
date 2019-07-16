@@ -244,7 +244,7 @@ namespace LogoExt
                 
 
                 label2.Text = "Vadesi Dolan: ";
-                label12.Text = "Toplam Bakiye: ";
+                label12.Text = "Çekli Bakiye: ";
                 label5.Text = vadesiDolan.ToString("#,###0.00");
                 textBox2.Visible = label2.Visible = label5.Visible = label9.Visible = true;
             }

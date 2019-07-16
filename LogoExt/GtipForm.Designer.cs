@@ -132,6 +132,7 @@ namespace LogoExt
         private System.Windows.Forms.PictureBox pictureBox1;
         private Image checkImage;
         private Image errorImage;
+
         private System.Windows.Forms.Panel panelNotification;
 
         public System.Windows.Forms.DateTimePicker DateTimePicker1
@@ -153,7 +154,7 @@ namespace LogoExt
         }
 
         public Image CheckImage { get => checkImage; set => checkImage = value; }
-        public Image ErrorImage { get => errorImage; set => errorImage = value; }
+        public Image ErrorImage { get => errorImage; set => errorImage = value; }        
 
     }
 }

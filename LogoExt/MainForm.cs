@@ -17,6 +17,7 @@ namespace LogoExt
 
         protected override void OnLoad(EventArgs e)
         {
+            pinImage = Properties.Resources.pin;
             Global.Instance.FirmCodeList = Global.Instance.query.QueryFirmCodes();      //Get all firm codes
             Global.Instance.ItemCodeList = Global.Instance.query.QueryItemCodes();      //Get all items codes
                         
@@ -110,6 +111,32 @@ namespace LogoExt
             OpenEkstreForm();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenSettingsForm();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.TopMost = !this.TopMost;
+
+            if (this.TopMost) {
+                this.button6.BackgroundImage = pinImage;
+                this.button6.Text = "";
+                this.button6.BackColor = Color.YellowGreen;
+            }
+            else {
+                this.button6.BackgroundImage = null;
+                this.button6.Text = "Üste Sabitle";
+                this.button6.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            OpenItemsForm();
+        }
+
         private void tabControl_MouseClick(object sender, MouseEventArgs e)
         {
             // check if the right mouse button was pressed
@@ -140,6 +167,7 @@ namespace LogoExt
         {
             if (this.panelNotification.Height >= 70) {
                 this.timerSlideIn.Enabled = false;
+                StartTimerForPanel();
             }
             else if (this.panelNotification.Height < 60) {
                 this.panelNotification.Height += 6;
@@ -161,6 +189,20 @@ namespace LogoExt
             else if (this.panelNotification.Height <= 10) {
                 this.panelNotification.Height -= 1;
             }
+        }
+               
+        public void StartTimerForPanel()
+        {
+            timerPanel.Tick += new EventHandler(OnTimedEvent);
+            timerPanel.Interval = 3000;
+            timerPanel.Enabled = true;
+        }
+
+        //This event will fired when 3000ms passes and this will close the panel
+        private void OnTimedEvent(object source, EventArgs e)
+        {
+            timerPanel.Enabled = false;
+            timerSlideOut.Enabled = true;
         }
 
         private void OpenGtipForm() {
@@ -232,8 +274,7 @@ namespace LogoExt
                 tabForms.Visible = true;
             }
         }
-
-
+        
         private void OpenSettingsForm()
         {
             SettingsForm settingsForm = new SettingsForm();
@@ -258,9 +299,28 @@ namespace LogoExt
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void OpenItemsForm()
         {
-            OpenSettingsForm();
+            ItemsForm itemsForm = new ItemsForm();
+            itemsForm.MdiParent = this;
+            itemsForm.Dock = DockStyle.Fill;
+            itemsForm.TopLevel = false;
+            itemsForm.FormBorderStyle = FormBorderStyle.None;
+            itemsForm.Show();
+
+            TabPage tp = new TabPage(this.ActiveMdiChild.Text) {
+                Tag = this.ActiveMdiChild,
+                Parent = tabForms
+            };
+            tabForms.SelectedTab = tp;
+
+            this.ActiveMdiChild.Tag = tp;
+            this.ActiveMdiChild.FormClosed += new FormClosedEventHandler(ActiveMdiChild_FormClosed);
+            tp.Controls.Add(itemsForm);
+
+            if (!tabForms.Visible) {
+                tabForms.Visible = true;
+            }
         }
 
         public void ChangeFontsOfAllDataGridViews()
@@ -274,7 +334,14 @@ namespace LogoExt
                     ItemPriceForm itemPriceForm = (ItemPriceForm)tabForms.Controls[i].Tag;
                     itemPriceForm.DataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
                 }
+                else if (tabForms.Controls[i].Text == "ItemsForm") {
+                    ItemsForm itemsForm = (ItemsForm)tabForms.Controls[i].Tag;
+                    itemsForm.DataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                    itemsForm.DataGridView2.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                }
             }            
         }
+
+
     }
 }
