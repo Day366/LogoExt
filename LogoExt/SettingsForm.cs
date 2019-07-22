@@ -19,7 +19,7 @@ namespace LogoExt
 
         protected override void OnLoad(EventArgs e)
         {
-            string[] forms = new string[] { "GTİP Kodlu Ürünler", "Malzeme Birim Fiyatı", "Ekstre", "Malzeme Hareketleri" };
+            string[] forms = new string[] { "GTİP Kodlu Ürünler", "Malzeme Birim Fiyatı", "Ekstre", "Malzeme Hareketleri", "Satış Faturaları" };
             fontDialog1.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);            
             comboBox1.Items.AddRange(forms);
 
@@ -34,6 +34,9 @@ namespace LogoExt
             }
             else if (Global.Instance.settings.DefaultForm == Global.ITEMSFORM) {
                 comboBox1.SelectedIndex = 3;
+            }
+            else if (Global.Instance.settings.DefaultForm == Global.INVOICEFORM) {
+                comboBox1.SelectedIndex = 4;
             }
         }
 
@@ -62,6 +65,9 @@ namespace LogoExt
                     break;
                 case 3:
                     Global.Instance.settings.DefaultForm = Global.ITEMSFORM;
+                    break;
+                case 4:
+                    Global.Instance.settings.DefaultForm = Global.INVOICEFORM;
                     break;
             }
             Global.Instance.WriteSettings();
