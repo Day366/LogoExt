@@ -37,6 +37,9 @@ namespace LogoExt
             else if (Global.Instance.settings.DefaultForm == Global.ITEMSFORM) {
                 OpenItemsForm();
             }
+            else if (Global.Instance.settings.DefaultForm == Global.INVOICEFORM) {
+                OpenInvoiceForm();
+            }
         }
         
         private void ParseSettings()
@@ -138,6 +141,11 @@ namespace LogoExt
         private void button7_Click(object sender, EventArgs e)
         {
             OpenItemsForm();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            OpenInvoiceForm();
         }
 
         private void tabControl_MouseClick(object sender, MouseEventArgs e)
@@ -326,6 +334,30 @@ namespace LogoExt
             }
         }
 
+        private void OpenInvoiceForm()
+        {
+            InvoiceForm invoiceForm = new InvoiceForm();
+            invoiceForm.MdiParent = this;
+            invoiceForm.Dock = DockStyle.Fill;
+            invoiceForm.TopLevel = false;
+            invoiceForm.FormBorderStyle = FormBorderStyle.None;
+            invoiceForm.Show();
+
+            TabPage tp = new TabPage(this.ActiveMdiChild.Text) {
+                Tag = this.ActiveMdiChild,
+                Parent = tabForms
+            };
+            tabForms.SelectedTab = tp;
+
+            this.ActiveMdiChild.Tag = tp;
+            this.ActiveMdiChild.FormClosed += new FormClosedEventHandler(ActiveMdiChild_FormClosed);
+            tp.Controls.Add(invoiceForm);
+
+            if (!tabForms.Visible) {
+                tabForms.Visible = true;
+            }
+        }        
+
         public void ChangeFontsOfAllDataGridViews()
         {
             for (int i = 0; i < tabForms.Controls.Count; i++) {
@@ -344,7 +376,5 @@ namespace LogoExt
                 }
             }            
         }
-
-
     }
 }
