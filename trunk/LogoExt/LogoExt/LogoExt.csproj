@@ -110,70 +110,70 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EkstreForm.cs">
+    <Compile Include="Forms\EkstreForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EkstreForm.Designer.cs">
+    <Compile Include="Forms\EkstreForm.Designer.cs">
       <DependentUpon>EkstreForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GtipForm.cs">
+    <Compile Include="Forms\GtipForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GtipForm.Designer.cs">
+    <Compile Include="Forms\GtipForm.Designer.cs">
       <DependentUpon>GtipForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Global.cs" />
-    <Compile Include="InvoiceForm.cs">
+    <Compile Include="Code\Global.cs" />
+    <Compile Include="Forms\InvoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvoiceForm.Designer.cs">
+    <Compile Include="Forms\InvoiceForm.Designer.cs">
       <DependentUpon>InvoiceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemPriceForm.cs">
+    <Compile Include="Forms\ItemPriceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemPriceForm.Designer.cs">
+    <Compile Include="Forms\ItemPriceForm.Designer.cs">
       <DependentUpon>ItemPriceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemsForm.cs">
+    <Compile Include="Forms\ItemsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemsForm.Designer.cs">
+    <Compile Include="Forms\ItemsForm.Designer.cs">
       <DependentUpon>ItemsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogWriter.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Code\LogWriter.cs" />
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Code\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="SettingsForm.cs">
+    <Compile Include="Code\Query.cs" />
+    <Compile Include="Code\Settings.cs" />
+    <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SettingsForm.Designer.cs">
+    <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EkstreForm.resx">
+    <EmbeddedResource Include="Forms\EkstreForm.resx">
       <DependentUpon>EkstreForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GtipForm.resx">
+    <EmbeddedResource Include="Forms\GtipForm.resx">
       <DependentUpon>GtipForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvoiceForm.resx">
+    <EmbeddedResource Include="Forms\InvoiceForm.resx">
       <DependentUpon>InvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemPriceForm.resx">
+    <EmbeddedResource Include="Forms\ItemPriceForm.resx">
       <DependentUpon>ItemPriceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemsForm.resx">
+    <EmbeddedResource Include="Forms\ItemsForm.resx">
       <DependentUpon>ItemsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -187,7 +187,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SettingsForm.resx">
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LogoExt_TemporaryKey.pfx" />
