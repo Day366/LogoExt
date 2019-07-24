@@ -256,6 +256,7 @@ namespace LogoExt
                 textBox2.Visible = label2.Visible = label5.Visible = label9.Visible = true;
             }
         }
+
         //Format "Tarih" Column, set visible to true, color the odd and even lines, and allign some of the rows
         private void DataGridViewFormat(DataTable dt, int latestVadeRow, int vade)
         {
@@ -263,7 +264,7 @@ namespace LogoExt
             dataGridView1.DataSource = new BindingSource(dt, null);
             dataGridView1.Visible = true;
 
-            DataGridLineColoring(Color.White, Color.WhiteSmoke);            
+            dataGridView1.EvenRowColoring(Color.WhiteSmoke);            
             
             if (vade > 0) {
                 foreach (DataGridViewRow row in dataGridView1.Rows) {
@@ -295,19 +296,6 @@ namespace LogoExt
             DataGridLineAlignment();
             dataGridView1.SetColumnSortMode(DataGridViewColumnSortMode.NotSortable);
             dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1; //scroll to bottom of datagridview
-        }
-
-        //color the table's odd and even lines
-        private void DataGridLineColoring(Color even, Color odd)
-        {
-            foreach (DataGridViewRow row in dataGridView1.Rows) {
-                if (row.Index % 2 == 0) {
-                    row.DefaultCellStyle.BackColor = even;
-                }
-                else {
-                    row.DefaultCellStyle.BackColor = odd;
-                }
-            }
         }
 
         private string ProcessFicheType(string ficheType) {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Web.Helpers;
@@ -89,9 +90,50 @@ namespace LogoExt
         }
     }
 
-    public static class ExtensionMethods
+    public static class DatatGridViewExtensions
     {
-        //To fix scroll at dataGridView
+        /// <summary>
+        /// Disable sorting of collumns in DataGridView
+        /// </summary>
+        public static void SetColumnSortMode(this DataGridView dataGridView, DataGridViewColumnSortMode sortMode)
+        {
+            foreach (DataGridViewColumn column in dataGridView.Columns) {
+                column.SortMode = sortMode;
+            }
+        }
+
+        /// <summary>
+        /// Color the table's even rows with the given color
+        /// </summary>
+        public static void EvenRowColoring(this DataGridView dt, Color even)
+        {
+            foreach (DataGridViewRow row in dt.Rows) {
+                if (row.Index % 2 == 0) {
+                    row.DefaultCellStyle.BackColor = even;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Color the table's odd and even rows with the given colors
+        /// </summary>
+        /// <param name="even">Color for even rows</param>
+        /// <param name="odd">Color for odd rows</param>
+        public static void EvenOddRowColoring(this DataGridView dt, Color even, Color odd)
+        {
+            foreach (DataGridViewRow row in dt.Rows) {
+                if (row.Index % 2 == 0) {
+                    row.DefaultCellStyle.BackColor = even;
+                }
+                else {
+                    row.DefaultCellStyle.BackColor = odd;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Default scroll behaviour is jumpy. In order to fix it call this function OnLoad()
+        /// </summary>
         public static void DoubleBuffered(this DataGridView dgv, bool setting)
         {
             Type dgvType = dgv.GetType();
@@ -100,21 +142,11 @@ namespace LogoExt
         }
     }
 
-
-    public static class DatatGridViewExtensions
-    {
-        //Disable sorting of collumns in DataGridView
-        public static void SetColumnSortMode(this DataGridView dataGridView, DataGridViewColumnSortMode sortMode)
-        {
-            foreach (DataGridViewColumn column in dataGridView.Columns) {
-                column.SortMode = sortMode;
-            }
-        }
-    }
-
     public static class DataTableExtensions
     {
-        //Set collumn order by giving header names as an array
+        /// <summary>
+        /// Set collumn order by giving header names as an array
+        /// </summary>
         public static void SetColumnsOrder(this DataTable table, params String[] columnNames)
         {
             int columnIndex = 0;
