@@ -64,6 +64,7 @@ namespace LogoExt
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(404, 303);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             // 
             // dataGridView2
             // 
@@ -82,6 +83,7 @@ namespace LogoExt
             this.dataGridView2.RowHeadersWidth = 5;
             this.dataGridView2.Size = new System.Drawing.Size(366, 303);
             this.dataGridView2.TabIndex = 2;
+            this.dataGridView2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView2_MouseUp); 
             // 
             // textBox1
             // 
@@ -90,7 +92,7 @@ namespace LogoExt
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(168, 29);
             this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 

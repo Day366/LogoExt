@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogoExt
@@ -22,15 +17,15 @@ namespace LogoExt
         protected override void OnLoad(EventArgs e)
         {
             this.ActiveControl = textBox1;                                                  //focus will be on textBox1 on start
-            dataGridView1.CellMouseUp += DGV1OnCellMouseUp;
-            textBox1.KeyPress += new KeyPressEventHandler(TextBox1_KeyPress);
+            textBox1.KeyPress += new KeyPressEventHandler(textBox1_KeyPress);
             dataGridView1.DataBindingComplete += dataGridView1_DataBindingComplete;
             dataGridView2.DataBindingComplete += dataGridView2_DataBindingComplete;
-            dataGridView2.CellMouseUp += DGV2OnCellMouseUp;
-            dataGridView2.MouseLeave += DGV2OnCellMouseLeave;
-
             dataGridView1.DoubleBuffered(true);
             dataGridView2.DoubleBuffered(true);
+
+            dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+            dataGridView2.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+
             int year = Int32.Parse(DateTime.Now.ToString("yy"));
             for (; year > 2; year--) {
                 if (year< 10) {
@@ -42,13 +37,6 @@ namespace LogoExt
             }
             listBox1.SetSelected(0, true);
             QueryItems();
-
-            dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
-            dataGridView2.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
-
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             dataGridView1.Width = 5 + dataGridView1.Columns["Kodu"].Width + dataGridView1.Columns["Açıklaması"].Width + dataGridView1.Columns["Stok"].Width + SystemInformation.VerticalScrollBarWidth;
             dataGridView2.Location = new Point(dataGridView1.Location.X + dataGridView1.Width + 5, dataGridView1.Location.Y);           //dgv2'yi dgv1'e göre konumlandır
@@ -77,11 +65,77 @@ namespace LogoExt
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count != 0) {
+            if (dataGridView1.SelectedRows.Count == 1) {
                 QueryItemMovements();
             }
         }
 
+        private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            QueryItemMovements();
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.EvenRowColoring(Color.Azure);
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+        }
+
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView2.EvenRowColoring(Color.Azure);
+            dataGridView2.Columns["Giriş Miktar"].DisplayIndex = 5;
+            dataGridView2.Columns["Giriş Birim Fiyat"].DisplayIndex = 6;
+            dataGridView2.Columns["Giriş Tutar"].DisplayIndex = 7;
+            dataGridView2.Columns["Çıkış Miktar"].DisplayIndex = 8;
+            dataGridView2.Columns["Çıkış Birim Fiyat"].DisplayIndex = 9;
+            dataGridView2.Columns["Çıkış Tutar"].DisplayIndex = 10;
+
+            dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView2.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView2.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView2.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView2.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            dataGridView2.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            dataGridView2.Columns["Giriş Miktar"].HeaderCell.Style.BackColor = Color.GreenYellow;
+            dataGridView2.Columns["Giriş Birim Fiyat"].HeaderCell.Style.BackColor = Color.GreenYellow;
+            dataGridView2.Columns["Giriş Tutar"].HeaderCell.Style.BackColor = Color.GreenYellow;
+            dataGridView2.Columns["Çıkış Miktar"].HeaderCell.Style.BackColor = Color.PaleVioletRed;
+            dataGridView2.Columns["Çıkış Birim Fiyat"].HeaderCell.Style.BackColor = Color.PaleVioletRed;
+            dataGridView2.Columns["Çıkış Tutar"].HeaderCell.Style.BackColor = Color.PaleVioletRed;
+            dataGridView2.EnableHeadersVisualStyles = false;
+
+            //color the bottom row if there is a sum row at the end
+            if (dataGridView2.Rows.Count > 1) {
+                dataGridView2.Rows[dataGridView2.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightSteelBlue;
+            }
+
+            if (dataGridView2.Rows.Count > 10) {
+                dataGridView2.FirstDisplayedScrollingRowIndex = dataGridView2.Rows.Count - 1;
+            }
+        }
+
+        //Fills the "dataGridView1" with items stock
+        private void QueryItems()
+        {
+            DataTable dt = Global.Instance.query.QueryItems();
+            if (dt == null) { return; }     //we probably got an exception from query. Do nothing.            
+            dataGridView1.DataSource = new BindingSource(dt, null);
+        }
+
+        //Fills the "dataGridView2" with item movements
         private void QueryItemMovements()
         {
             if (dataGridView1.SelectedCells.Count == 0) { return; }
@@ -91,14 +145,6 @@ namespace LogoExt
             TRCodeConverter(dt);
             SumCollumns(dt);                        
             dataGridView2.DataSource = new BindingSource(dt, null);
-        }
-
-        //Fills the "dataGridView1" with Items Stock
-        private void QueryItems()
-        {
-            DataTable dt = Global.Instance.query.QueryItems();
-            if (dt == null) { return; }     //we probably got an exception from query. Do nothing.            
-            dataGridView1.DataSource = new BindingSource(dt, null);
         }
 
         private void AddNewCollumns(DataTable dt)
@@ -211,55 +257,6 @@ namespace LogoExt
             dr["Çıkış Tutar"] = Math.Round((double)dr["Tutar"], 2).ToString("#,###0.00", CultureInfo.CreateSpecificCulture("en-US"));
         }
 
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-             DataGridLineColoring(dataGridView1);
-        }
-
-        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            DataGridLineColoring(dataGridView2);
-            dataGridView2.Columns["Giriş Miktar"].DisplayIndex = 5;
-            dataGridView2.Columns["Giriş Birim Fiyat"].DisplayIndex = 6;
-            dataGridView2.Columns["Giriş Tutar"].DisplayIndex = 7;
-            dataGridView2.Columns["Çıkış Miktar"].DisplayIndex = 8;
-            dataGridView2.Columns["Çıkış Birim Fiyat"].DisplayIndex = 9;
-            dataGridView2.Columns["Çıkış Tutar"].DisplayIndex = 10;
-
-            dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            
-            dataGridView2.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView2.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            dataGridView2.Columns["Giriş Miktar"].HeaderCell.Style.BackColor = Color.GreenYellow;
-            dataGridView2.Columns["Giriş Birim Fiyat"].HeaderCell.Style.BackColor = Color.GreenYellow;
-            dataGridView2.Columns["Giriş Tutar"].HeaderCell.Style.BackColor = Color.GreenYellow;
-            dataGridView2.Columns["Çıkış Miktar"].HeaderCell.Style.BackColor = Color.PaleVioletRed;
-            dataGridView2.Columns["Çıkış Birim Fiyat"].HeaderCell.Style.BackColor = Color.PaleVioletRed;
-            dataGridView2.Columns["Çıkış Tutar"].HeaderCell.Style.BackColor = Color.PaleVioletRed;
-            dataGridView2.EnableHeadersVisualStyles = false;
-
-            //color the bottom row if there is a sum row at the end
-            if (dataGridView2.Rows.Count > 1) {
-                dataGridView2.Rows[dataGridView2.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightSteelBlue;
-            }
-
-            if (dataGridView2.Rows.Count > 10) {
-                dataGridView2.FirstDisplayedScrollingRowIndex = dataGridView2.Rows.Count - 1;
-            }
-        }
-
         private void SumCollumns(DataTable dt) {
             if (dt.Rows.Count > 1) {
                 decimal gm = 0;
@@ -287,35 +284,19 @@ namespace LogoExt
             }
         }
 
-        private void DGV1OnCellMouseUp(object sender, MouseEventArgs e)
-        {
-            QueryItemMovements();
-        }
-
-        private void DGV2OnCellMouseUp(object sender, MouseEventArgs e)
-        {
-            SumCellValues();
-        }
-        
-        private void DGV2OnCellMouseLeave(object sender, EventArgs e)
-        {
-            SumCellValues();
-        }
-
-        private void SumCellValues()
+        private void dataGridView2_MouseUp(object sender, MouseEventArgs e)
         {
             int columnIndex = 0;
             decimal rowTotal = 0;
             decimal result = 0;
-            NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
             for (int i = 0; i < dataGridView2.SelectedCells.Count; i++) {
                 if (i == 0) {
                     columnIndex = dataGridView2.SelectedCells[i].ColumnIndex;
                 }
-
                 if (columnIndex == dataGridView2.SelectedCells[i].ColumnIndex) {
                     if (dataGridView2.SelectedCells[i].Value != null && dataGridView2.SelectedCells[i].Value.ToString() != "") {
-                        if (Decimal.TryParse(dataGridView2.SelectedCells[i].Value.ToString(), style, CultureInfo.InvariantCulture, out result)) {
+                        if (dataGridView2.RowCount > 1 && dataGridView2.SelectedCells[i].RowIndex == dataGridView2.RowCount-1) { continue; }
+                        if (Decimal.TryParse(dataGridView2.SelectedCells[i].Value.ToString(), NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out result)) {
                             rowTotal += result;
                         }
                     }
@@ -330,7 +311,8 @@ namespace LogoExt
             label1.Visible = true;
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+        //find the item in "dataGridView1" by searching from "textBox1"
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (textBox1.TextLength > 1) {
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("tr-TR");
@@ -347,21 +329,12 @@ namespace LogoExt
             }            
         }
 
-        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        //when "Enter" Key is Pressed call Item Movements Query
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) {
                 if (dataGridView1.SelectedRows.Count == 1) {
                     QueryItemMovements();
-                }
-            }
-        }
-
-        //color the table's odd and even lines
-        private void DataGridLineColoring(DataGridView dt)
-        {
-            foreach (DataGridViewRow row in dt.Rows) {
-                if (row.Index % 2 == 0) {
-                    row.DefaultCellStyle.BackColor = Color.Azure;
                 }
             }
         }
@@ -378,6 +351,5 @@ namespace LogoExt
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
-
     }
 }
