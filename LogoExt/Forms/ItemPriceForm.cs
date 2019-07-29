@@ -20,9 +20,7 @@ namespace LogoExt
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
-            textBox1.KeyPress += new KeyPressEventHandler(TextBox1_KeyPress);
-            textBox2.KeyPress += new KeyPressEventHandler(TextBox2_KeyPress);
-            textBox3.KeyPress += new KeyPressEventHandler(TextBox3_KeyPress);
+
             dataGridView1.ColumnHeaderMouseClick += dataGridView1_SelectionChanged;
             dataGridView1.DoubleBuffered(true);
 
@@ -37,8 +35,7 @@ namespace LogoExt
                 }
             }
             listBox1.SetSelected(0, true);
-            dataGridView1.CellMouseUp += OnCellMouseUp;
-            dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
         }
 
         public string GetFirmCode(int pastYears) {
@@ -217,38 +214,69 @@ namespace LogoExt
         }
 
         //When "Enter" Key is pressed and there is one item in listBox2 run query
-        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == 13) {
+            if (e.KeyCode == Keys.Enter) {
                 if (listBox2.Items.Count > 0) {
                     listBox2.SelectedItem = listBox2.Items[0];
+                    e.Handled = e.SuppressKeyPress = true;          //Enter'a basınca windows sesini kesmek için şart
                 }
             }
         }
 
         //When "Enter" Key is pressed and there is one item in listBox3 run query
-        private void TextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == 13) {
+            if (e.KeyCode == Keys.Enter) {
                 if (listBox3.Items.Count > 0) {
                     listBox3.SelectedItem = listBox3.Items[0];
+                    e.Handled = e.SuppressKeyPress = true;          //Enter'a basınca windows sesini kesmek için şart
                 }
             }
         }
 
         //When "Enter" Key is pressed search for details
-        private void TextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == 13) {
+            if (e.KeyCode == Keys.Enter) {
                 if (textBox3.Text != "" && listBox3.SelectedItem != null) {
                     QueryItemPriceByDetailAndFirm(textBox3, listBox3);
+                    e.Handled = e.SuppressKeyPress = true;          //Enter'a basınca windows sesini kesmek için şart
                 }
                 else if(textBox3.Text != "") {
-                    QueryItemPriceByDetail(textBox3);                    
+                    QueryItemPriceByDetail(textBox3);
+                    e.Handled = e.SuppressKeyPress = true;          //Enter'a basınca windows sesini kesmek için şart
                 }
             }
         }
 
+        private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
+        {
+            int columnIndex = 0;
+            decimal rowTotal = 0;
+            decimal result = 0;
+            NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+            for (int i = 0; i < dataGridView1.SelectedCells.Count; i++) {
+                if (i == 0) {
+                    columnIndex = dataGridView1.SelectedCells[i].ColumnIndex;
+                }
+
+                if (columnIndex == dataGridView1.SelectedCells[i].ColumnIndex) {
+                    if (dataGridView1.SelectedCells[i].Value != null && dataGridView1.SelectedCells[i].Value.ToString() != "") {
+                        if (Decimal.TryParse(dataGridView1.SelectedCells[i].Value.ToString(), style, CultureInfo.GetCultureInfo("fr-FR"), out result)) {   //143,57  virgüllü olan ayırmaları Fransız Culture la ayır
+                            rowTotal += result;
+                        }
+                    }
+                }
+                else {
+                    label3.Text = "Toplam: Farklı sütünları topladın!";
+                    return;
+                }
+            }
+
+            label3.Text = "Toplam: " + rowTotal.ToString();
+            label3.Visible = true;
+        }
 
         //Fills the "dataGridView1" according to given "FirmCode" and "ItemCode"
         private void QueryItemPriceByFirmAndItem(ListBox listBox1, ListBox listBox2)
@@ -262,8 +290,7 @@ namespace LogoExt
             DataTable dt = Global.Instance.query.QueryItemPriceByFirm(this, listBox1.SelectedItem.ToString());
             DataGridViewFormat(dt);
         }
-
-
+        
         //Fills the "dataGridView1" according to given "Details"
         private void QueryItemPriceByDetail(TextBox textBox3)
         {
@@ -271,7 +298,6 @@ namespace LogoExt
             DataGridViewFormat(dt);
         }
         
-
         //Fills the "dataGridView1" according to given "FirmCode" and "Details"
         private void QueryItemPriceByDetailAndFirm(TextBox textBox3, ListBox listBox1)
         {
@@ -315,33 +341,6 @@ namespace LogoExt
             dataGridView1.Columns["Tarih"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
-        private void OnCellMouseUp(object sender, MouseEventArgs e)
-        {
-            int columnIndex = 0;
-            decimal rowTotal = 0;
-            decimal result = 0;
-            NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
-            for (int i = 0; i < dataGridView1.SelectedCells.Count; i++) {
-                if (i == 0) {
-                    columnIndex = dataGridView1.SelectedCells[i].ColumnIndex;
-                }
-
-                if (columnIndex == dataGridView1.SelectedCells[i].ColumnIndex) {
-                    if (dataGridView1.SelectedCells[i].Value != null && dataGridView1.SelectedCells[i].Value.ToString() != "") {
-                        if (Decimal.TryParse(dataGridView1.SelectedCells[i].Value.ToString(), style,  CultureInfo.GetCultureInfo("fr-FR"), out result)) {   //143,57  virgüllü olan ayırmaları Fransız Culture la ayır
-                            rowTotal += result;
-                        }
-                    }
-                }
-                else {
-                    label3.Text = "Toplam: Farklı sütünları topladın!";
-                    return;
-                }
-            }
-
-            label3.Text = "Toplam: " + rowTotal.ToString();
-            label3.Visible = true;
-        }
 
     }
 }
