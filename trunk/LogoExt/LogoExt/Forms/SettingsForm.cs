@@ -14,7 +14,9 @@ namespace LogoExt
         protected override void OnLoad(EventArgs e)
         {
             string[] forms = new string[] { "GTİP Kodlu Ürünler", "Malzeme Birim Fiyatı", "Ekstre", "Malzeme Hareketleri", "Satış Faturaları" };
-            fontDialog1.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);            
+            fontDialog1.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+            fontDialog1.MaxSize = 11;
+            fontDialog1.MinSize = 8;
             comboBox1.Items.AddRange(forms);
 
             if (Global.Instance.settings.DefaultForm == Global.GTIPFORM) {

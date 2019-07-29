@@ -17,14 +17,13 @@ namespace LogoExt
         protected override void OnLoad(EventArgs e)
         {
             this.ActiveControl = textBox1;                                                  //focus will be on textBox1 on start
-            textBox1.KeyPress += new KeyPressEventHandler(textBox1_KeyPress);
             dataGridView1.DataBindingComplete += dataGridView1_DataBindingComplete;
             dataGridView2.DataBindingComplete += dataGridView2_DataBindingComplete;
             dataGridView1.DoubleBuffered(true);
             dataGridView2.DoubleBuffered(true);
 
-            dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
-            dataGridView2.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = dataGridView2.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
 
             int year = Int32.Parse(DateTime.Now.ToString("yy"));
             for (; year > 2; year--) {
@@ -38,9 +37,17 @@ namespace LogoExt
             listBox1.SetSelected(0, true);
             QueryItems();
 
-            dataGridView1.Width = 5 + dataGridView1.Columns["Kodu"].Width + dataGridView1.Columns["Açıklaması"].Width + dataGridView1.Columns["Stok"].Width + SystemInformation.VerticalScrollBarWidth;
-            dataGridView2.Location = new Point(dataGridView1.Location.X + dataGridView1.Width + 5, dataGridView1.Location.Y);           //dgv2'yi dgv1'e göre konumlandır
-            dataGridView2.Width = this.Width - (dataGridView1.Width + 35);                                                              //dgv2'nin genişliğini belirle. üst satırla birlikte
+            panel2.Width = 13 + dataGridView1.Columns["Kodu"].Width + dataGridView1.Columns["Açıklaması"].Width + dataGridView1.Columns["Stok"].Width + SystemInformation.VerticalScrollBarWidth;
+          //  dataGridView2.Location = new Point(dataGridView1.Location.X + dataGridView1.Width + 5, dataGridView1.Location.Y);           //dgv2'yi dgv1'e göre konumlandır
+          //  dataGridView2.Width = this.Width - (dataGridView1.Width + 35);                                                              //dgv2'nin genişliğini belirle. üst satırla birlikte
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            panel1.Height = 85;
+            ResizePanels();
         }
 
         //Focus textBox1 when form is shown
@@ -75,12 +82,20 @@ namespace LogoExt
             QueryItemMovements();
         }
 
+        //dataGridView'da bir satır seçili ise ItemMovementsı getir. 
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                if (dataGridView1.SelectedRows.Count == 1) {
+                    QueryItemMovements();
+                    e.Handled = e.SuppressKeyPress = true;          //Enter'a altsatıra inmesini engellemek için şart
+                }
+            }
+        }
+
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dataGridView1.EvenRowColoring(Color.Azure);
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
 
         private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -93,14 +108,14 @@ namespace LogoExt
             dataGridView2.Columns["Çıkış Birim Fiyat"].DisplayIndex = 9;
             dataGridView2.Columns["Çıkış Tutar"].DisplayIndex = 10;
 
-            dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView2.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView2.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView2.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView2.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView2.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             dataGridView2.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView2.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -124,6 +139,62 @@ namespace LogoExt
 
             if (dataGridView2.Rows.Count > 10) {
                 dataGridView2.FirstDisplayedScrollingRowIndex = dataGridView2.Rows.Count - 1;
+            }
+        }
+
+        private void dataGridView2_MouseUp(object sender, MouseEventArgs e)
+        {
+            int columnIndex = 0;
+            decimal rowTotal = 0;
+            decimal result = 0;
+            for (int i = 0; i < dataGridView2.SelectedCells.Count; i++) {
+                if (i == 0) {
+                    columnIndex = dataGridView2.SelectedCells[i].ColumnIndex;
+                }
+                if (columnIndex == dataGridView2.SelectedCells[i].ColumnIndex) {
+                    if (dataGridView2.SelectedCells[i].Value != null && dataGridView2.SelectedCells[i].Value.ToString() != "") {
+                        if (dataGridView2.RowCount > 1 && dataGridView2.SelectedCells[i].RowIndex == dataGridView2.RowCount - 1) { continue; }
+                        if (Decimal.TryParse(dataGridView2.SelectedCells[i].Value.ToString(), NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out result)) {
+                            rowTotal += result;
+                        }
+                    }
+                }
+                else {
+                    label1.Text = "Toplam: Farklı sütünları topladın!";
+                    return;
+                }
+            }
+
+            label1.Text = "Toplam: " + rowTotal.ToString("#,###0.00");
+            label1.Visible = true;
+        }
+
+        //find the item in "dataGridView1" by searching from "textBox1"
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 1) {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("tr-TR");
+                string upper = textBox1.Text.ToUpper();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows) {
+                    string temp = row.Cells[0].Value.ToString();
+                    if (temp.ToUpper().Contains(upper)) {
+                        row.Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                }
+            }
+        }
+
+        //when "Enter" Key is Pressed call Item Movements Query
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                if (dataGridView1.SelectedRows.Count == 1) {
+                    QueryItemMovements();
+                    e.Handled = e.SuppressKeyPress = true;          //Enter'a basınca windows sesini kesmek için şart
+                }
             }
         }
 
@@ -284,72 +355,9 @@ namespace LogoExt
             }
         }
 
-        private void dataGridView2_MouseUp(object sender, MouseEventArgs e)
+        private void ResizePanels()
         {
-            int columnIndex = 0;
-            decimal rowTotal = 0;
-            decimal result = 0;
-            for (int i = 0; i < dataGridView2.SelectedCells.Count; i++) {
-                if (i == 0) {
-                    columnIndex = dataGridView2.SelectedCells[i].ColumnIndex;
-                }
-                if (columnIndex == dataGridView2.SelectedCells[i].ColumnIndex) {
-                    if (dataGridView2.SelectedCells[i].Value != null && dataGridView2.SelectedCells[i].Value.ToString() != "") {
-                        if (dataGridView2.RowCount > 1 && dataGridView2.SelectedCells[i].RowIndex == dataGridView2.RowCount-1) { continue; }
-                        if (Decimal.TryParse(dataGridView2.SelectedCells[i].Value.ToString(), NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out result)) {
-                            rowTotal += result;
-                        }
-                    }
-                }
-                else {
-                    label1.Text = "Toplam: Farklı sütünları topladın!";
-                    return;
-                }
-            }
-
-            label1.Text = "Toplam: " + rowTotal.ToString("#,###0.00");
-            label1.Visible = true;
-        }
-
-        //find the item in "dataGridView1" by searching from "textBox1"
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.TextLength > 1) {
-                Thread.CurrentThread.CurrentCulture = new CultureInfo("tr-TR");
-                string upper = textBox1.Text.ToUpper();
-
-                foreach (DataGridViewRow row in dataGridView1.Rows) {
-                    string temp = row.Cells[0].Value.ToString();
-                    if (temp.ToUpper().Contains(upper)) {
-                        row.Selected = true;
-                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
-                        break;
-                    }
-                }
-            }            
-        }
-
-        //when "Enter" Key is Pressed call Item Movements Query
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13) {
-                if (dataGridView1.SelectedRows.Count == 1) {
-                    QueryItemMovements();
-                }
-            }
-        }
-
-        //dataGridView'da bi satır seçili ise ItemMovementsı getir. 
-        //KeyPressEventHandler ları sorun çıkardığı için burda yaptım 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.Enter) {
-                if (dataGridView1.SelectedRows.Count == 1) {
-                    QueryItemMovements();
-                    return true;
-                }
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
+            panel3.Height = (int)((this.Height - panel1.Height) * 0.5);
         }
     }
 }

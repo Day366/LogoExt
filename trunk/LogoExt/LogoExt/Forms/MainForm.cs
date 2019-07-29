@@ -109,7 +109,7 @@ namespace LogoExt
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.timerSlideOut.Enabled = true;
+            timerSlideOut.Enabled = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -168,37 +168,39 @@ namespace LogoExt
 
         private void panelNotification_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Middle) {
-                this.timerSlideOut.Enabled = true;
+            if (e.Button == MouseButtons.Left) {
+                timerSlideOut.Enabled = true;
             }
         }
 
         //to slide the notification panel call "this.timerSlideIn.Enabled = true;"
         private void timerSlideIn_Tick(object sender, EventArgs e)
         {
-            if (this.panelNotification.Height >= 70) {
-                this.timerSlideIn.Enabled = false;
+            if (panelNotification.Height >= 70) {
+                timerSlideIn.Enabled = false;
+                timerPanel.Enabled = false;
                 StartTimerForPanel();
             }
-            else if (this.panelNotification.Height < 60) {
-                this.panelNotification.Height += 6;
+            else if (panelNotification.Height < 60) {
+                panelNotification.Height += 6;
             }
-            else if (this.panelNotification.Height >= 60) {
-                this.panelNotification.Height += 1;
+            else if (panelNotification.Height >= 60) {
+                panelNotification.Height += 1;
             }
         }
 
         //to slide the notification panel call "this.timerSlideOut.Enabled = true;"
         private void timerSlideOut_Tick(object sender, EventArgs e)
         {
-            if (this.panelNotification.Height <= 0) {
-                this.timerSlideOut.Enabled = false;
+            if (panelNotification.Height <= 0) {
+                timerSlideOut.Enabled = false;
+                timerPanel.Enabled = false;
             }
-            else if (this.panelNotification.Height > 10) {
-                this.panelNotification.Height -= 6;
+            else if (panelNotification.Height > 10) {
+                panelNotification.Height -= 6;
             }
-            else if (this.panelNotification.Height <= 10) {
-                this.panelNotification.Height -= 1;
+            else if (panelNotification.Height <= 10) {
+                panelNotification.Height -= 1;
             }
         }
                
@@ -361,18 +363,24 @@ namespace LogoExt
         public void ChangeFontsOfAllDataGridViews()
         {
             for (int i = 0; i < tabForms.Controls.Count; i++) {
-                if (tabForms.Controls[i].Text == "EkstreForm") {
+                if (tabForms.Controls[i].Text == "Ekstre") {
                     EkstreForm ekstreForm = (EkstreForm)tabForms.Controls[i].Tag;
-                    ekstreForm.DataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                    ekstreForm.DataGridView1.DefaultCellStyle.Font = ekstreForm.DataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                    ekstreForm.DataGridView2.DefaultCellStyle.Font = ekstreForm.DataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
                 }
-                else if(tabForms.Controls[i].Text == "ItemPriceForm") {
+                else if(tabForms.Controls[i].Text == "Malzeme Birim Fiyatı") {
                     ItemPriceForm itemPriceForm = (ItemPriceForm)tabForms.Controls[i].Tag;
-                    itemPriceForm.DataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                    itemPriceForm.DataGridView1.DefaultCellStyle.Font = itemPriceForm.DataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
                 }
-                else if (tabForms.Controls[i].Text == "ItemsForm") {
+                else if (tabForms.Controls[i].Text == "Malzeme Hareketleri") {
                     ItemsForm itemsForm = (ItemsForm)tabForms.Controls[i].Tag;
-                    itemsForm.DataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
-                    itemsForm.DataGridView2.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                    itemsForm.DataGridView1.DefaultCellStyle.Font = itemsForm.DataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                    itemsForm.DataGridView2.DefaultCellStyle.Font = itemsForm.DataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                }
+                else if (tabForms.Controls[i].Text == "Satış Faturaları") {
+                    InvoiceForm invoiceForm = (InvoiceForm)tabForms.Controls[i].Tag;
+                    invoiceForm.DataGridView1.DefaultCellStyle.Font = invoiceForm.DataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+                    invoiceForm.DataGridView2.DefaultCellStyle.Font = invoiceForm.DataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
                 }
             }            
         }

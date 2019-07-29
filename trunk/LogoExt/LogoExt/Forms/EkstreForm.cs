@@ -23,19 +23,26 @@ namespace LogoExt
 
         protected override void OnLoad(EventArgs e)
         {
+            panel1.Height = 130;
+
+            dataGridView1.DataBindingComplete += dataGridView1_DataBindingComplete;
+            dataGridView2.DataBindingComplete += dataGridView2_DataBindingComplete;
             
-            textBox1.KeyPress += new KeyPressEventHandler(TextBox1_KeyPress);
-            dataGridView1.CellMouseUp += OnCellMouseUp;
-            dataGridView1.MouseLeave += OnCellMouseLeave;
-            textBox2.KeyPress += new KeyPressEventHandler(TextBox2_KeyPress);
-            label5.MouseDown += new MouseEventHandler(Label5_MouseDown);
-            label10.MouseDown += new MouseEventHandler(Label10_MouseDown);
+
+
             dataGridView1.DoubleBuffered(true);
             label4.BringToFront();
             label5.BringToFront();
             label6.BringToFront();
             textBox2.BringToFront();
-            dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = dataGridView1.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = dataGridView2.DefaultCellStyle.Font = new Font((string)Global.Instance.settings.FontFamily, (float)Global.Instance.settings.TextSize);
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            ResizePanels();
         }
 
         //Focus textBox1 when form is shown
@@ -54,32 +61,111 @@ namespace LogoExt
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Ekstre(-1);
+            DataTable dt = Global.Instance.query.QueryFirmDetails(listBox1.SelectedItem.ToString());
+            if (dt == null) { return; }
+            if (dt.Rows[0] != null) {
+                label10.Text = dt.Rows[0][0].ToString();
+                label10.Visible = true;
+                label11.Text = dt.Rows[0][1].ToString() + " " + dt.Rows[0][2].ToString();
+                label11.Visible = true;
+                label7.Text = dt.Rows[0][3].ToString();
+                label7.Visible = true;
+            }
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1;
+        }
+
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            ResizePanels();
+            dataGridView2.EvenRowColoring(Color.Azure);
+            //dataGridView2 açılınca tıklı olan hücrenin üstüne açabilir. tıklı olan hücreye kaydırıyor
+            if (dataGridView1.SelectedCells.Count != 0 && !dataGridView1.SelectedCells[0].Displayed) {
+                dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+            }
+
+            dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView2.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        }
+
+        private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            QueryInvoiceDetails();
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                if (dataGridView1.SelectedCells.Count == 1) {
+                    QueryInvoiceDetails();
+                    e.Handled = e.SuppressKeyPress = true;          //Enter'a altsatıra inmesini engellemek için şart
+                }
+            }
+        }
+
+        private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
+        {
+            SumCellValues(dataGridView1);
+        }
+
+        private void dataGridView2_MouseUp(object sender, MouseEventArgs e)
+        {
+            SumCellValues(dataGridView2);
+        }
+
+        private void QueryInvoiceDetails()
+        {
+            if (dataGridView1.SelectedCells.Count == 1 && dataGridView1.SelectedCells[0].ColumnIndex == 2) {
+                //if (dataGridView1.SelectedCells.Count == 1 ) {
+                DateTime dateTime = DateTime.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString());
+                int year = Int32.Parse(dateTime.ToString("yy")) - 2;
+
+                DataTable dt = Global.Instance.query.QueryInvoiceDetails(year.ToString(), dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[2].Value.ToString());
+
+                if (dt == null) { return; }     //we probably got an exception from query. Do nothing.
+                dataGridView2.DataSource = new BindingSource(dt, null);
+            }
         }
 
         //When "Enter" Key is pressed and there is one item in listBox2 run query
-        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == 13) {
+            if (e.KeyCode == Keys.Enter) {
                 if (listBox1.Items.Count > 0) {
                     listBox1.SelectedItem = listBox1.Items[0];
+                    e.Handled = e.SuppressKeyPress = true;          //Enter'a basınca windows sesini kesmek için şart
                 }
             }
         }
 
         //When "Enter" Key is pressed and there is one item in listBox2 run query
-        private void TextBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == 13 && listBox1.SelectedItem != null) {
+            if (e.KeyCode == Keys.Enter && listBox1.SelectedItem != null) {
                 if (textBox2.Text.Length > 0 && Int32.TryParse(textBox2.Text, out int result)) {
                     if (result >= 0 && result <= 120) {
                         Ekstre(result);
+                        e.Handled = e.SuppressKeyPress = true;      //Enter'a basınca windows sesini kesmek için şart
                     }
                 }
             }
         }
 
         //When Label5 is clicked, copy the value and give a indication with backColor change
-        private void Label5_MouseDown(object sender, MouseEventArgs e)
+        private void label5_MouseDown(object sender, MouseEventArgs e)
         {
             label5.BackColor = Color.LightSkyBlue;
             Clipboard.SetText(label5.Text);
@@ -89,7 +175,7 @@ namespace LogoExt
         }
 
         //When Label5 is clicked, copy the value and give a indication with backColor change
-        private void Label10_MouseDown(object sender, MouseEventArgs e)
+        private void label10_MouseDown(object sender, MouseEventArgs e)
         {
             label10.BackColor = Color.LightSkyBlue;
             Clipboard.SetText(label10.Text);
@@ -145,8 +231,7 @@ namespace LogoExt
                 listBox1.Items.Clear();
             }
         }
-
-
+        
         private void Ekstre(int vade)
         {
             DataTable payPlanDT;
@@ -166,20 +251,11 @@ namespace LogoExt
                 label9.Visible = false;
                 textBox2.Visible = false;
 
-                DataTable firmDetailsDT = Global.Instance.query.QueryFirmDetails(listBox1.SelectedItem.ToString());
-                if (firmDetailsDT.Rows[0] != null) {
-                    label10.Text = firmDetailsDT.Rows[0][0].ToString();
-                    label10.Visible = true;
-                    label11.Text = firmDetailsDT.Rows[0][1].ToString() + " " + firmDetailsDT.Rows[0][2].ToString();
-                    label11.Visible = true;
-                }
                 DataTable dt = Global.Instance.query.QueryEkstre(listBox1.SelectedItem.ToString());
                 if (dt == null) { return; }
                 if (dt.Rows.Count == 0) {
-                    //TODO hiç row yoksa ekstre de yoktur ona göre bi geri bildirim yap
-                    Global.Instance.ErrorNotification("İşlem yok");
+                    Global.Instance.ErrorNotification("Hareket yok");
                     dataGridView1.DataSource = null;
-                    dataGridView1.Visible = true;
                     return;
                 }            
                          
@@ -246,7 +322,7 @@ namespace LogoExt
                 dt.Columns.Remove("TRCODE");
                 dt.Columns.Remove("PAYMENTREF");
                 dt.Columns.Remove("SIGN");
-                dt.SetColumnsOrder("Tarih", "Fiş No", "Fiş Türü", "Vade Tarihi", "Açıklama", "Borç", "Alacak");
+                dt.SetColumnsOrder("Tarih", "Vade Tarihi", "Fiş No", "Fiş Türü", "Açıklama", "Borç", "Alacak");
                 DataGridViewFormat(dt, latestVadeRow, vade);
                 
 
@@ -262,7 +338,6 @@ namespace LogoExt
         {
             DataTableExt.ConvertColumnType(dt, "Tarih");
             dataGridView1.DataSource = new BindingSource(dt, null);
-            dataGridView1.Visible = true;
 
             dataGridView1.EvenRowColoring(Color.WhiteSmoke);            
             
@@ -295,7 +370,6 @@ namespace LogoExt
             }                                             
             DataGridLineAlignment();
             dataGridView1.SetColumnSortMode(DataGridViewColumnSortMode.NotSortable);
-            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1; //scroll to bottom of datagridview
         }
 
         private string ProcessFicheType(string ficheType) {
@@ -492,10 +566,10 @@ namespace LogoExt
             dataGridView1.Columns["Vade Tarihi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["Bakiye"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             //açıklama satırı çok uzun gelebiliyor. Genişliğini 130 a sabitle
-            if (dataGridView1.Columns["Açıklama"].Width > 130) {
-                dataGridView1.Columns["Açıklama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                dataGridView1.Columns["Açıklama"].Width = 130;
-            }
+            //if (dataGridView1.Columns["Açıklama"].Width > 130) {
+            //    dataGridView1.Columns["Açıklama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            //    dataGridView1.Columns["Açıklama"].Width = 130;
+            //}
         }
 
         private decimal RealVadeCalculation(decimal bakiye, DataRowCollection rows, int vade) {
@@ -513,31 +587,21 @@ namespace LogoExt
             }
             return bakiye;
         }
-
-        private void OnCellMouseUp(object sender, MouseEventArgs e)
-        {
-            SumCellValues();
-        }
-
-        private void OnCellMouseLeave(object sender, EventArgs e)
-        {
-            SumCellValues();
-        }
-
-        private void SumCellValues()
+               
+        private void SumCellValues(DataGridView dt)
         {
             int columnIndex = 0;
             decimal rowTotal = 0;
             decimal result = 0;
             NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
-            for (int i = 0; i < dataGridView1.SelectedCells.Count; i++) {
+            for (int i = 0; i < dt.SelectedCells.Count; i++) {
                 if (i == 0) {
-                    columnIndex = dataGridView1.SelectedCells[i].ColumnIndex;
+                    columnIndex = dt.SelectedCells[i].ColumnIndex;
                 }
 
-                if (columnIndex == dataGridView1.SelectedCells[i].ColumnIndex) {
-                    if (dataGridView1.SelectedCells[i].Value != null && dataGridView1.SelectedCells[i].Value.ToString() != "") {
-                        if (Decimal.TryParse(dataGridView1.SelectedCells[i].Value.ToString(), style, CultureInfo.InvariantCulture, out result)) {
+                if (columnIndex == dt.SelectedCells[i].ColumnIndex) {
+                    if (dt.SelectedCells[i].Value != null && dt.SelectedCells[i].Value.ToString() != "") {
+                        if (Decimal.TryParse(dt.SelectedCells[i].Value.ToString(), style, CultureInfo.InvariantCulture, out result)) {
                             rowTotal += result;
                         }
                     }
@@ -550,6 +614,16 @@ namespace LogoExt
 
             label8.Text = "Toplam: " + rowTotal.ToString("#,###0.00");
             label8.Visible = true;
+        }
+
+        private void ResizePanels()
+        {
+            if (dataGridView2.RowCount > 0) {
+                panel3.Height = (int)((this.Height - panel1.Height) * 0.3);
+            }
+            else {
+                panel3.Height = 0;
+            }
         }
     }
 }
