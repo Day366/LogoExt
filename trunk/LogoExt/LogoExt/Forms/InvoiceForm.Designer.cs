@@ -152,6 +152,7 @@ namespace LogoExt
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.KeyDown += new KeyEventHandler(this.invoiceForm_KeyDown);
 
         }
 

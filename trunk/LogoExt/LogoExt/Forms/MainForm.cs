@@ -11,8 +11,6 @@ namespace LogoExt
         public MainForm()
         {
             InitializeComponent();
-            tabForms.MouseClick += tabControl_MouseClick;
-            labelWarningBody.MouseClick += panelNotification_MouseClick;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -20,7 +18,9 @@ namespace LogoExt
             pinImage = Properties.Resources.pin;
             Global.Instance.FirmCodeList = Global.Instance.query.QueryFirmCodes();      //Get all firm codes
             Global.Instance.ItemCodeList = Global.Instance.query.QueryItemCodes();      //Get all items codes
-                        
+
+            tabForms.MouseClick += tabControl_MouseClick;
+            labelWarningBody.MouseClick += panelNotification_MouseClick;
             splitContainer1.SplitterMoved += new SplitterEventHandler(splitContainer1_SplitterMoved);
             ParseSettings();
             splitContainer1.SplitterDistance = Global.Instance.settings.SplitterDistance;
@@ -40,6 +40,7 @@ namespace LogoExt
             else if (Global.Instance.settings.DefaultForm == Global.INVOICEFORM) {
                 OpenInvoiceForm();
             }
+
         }
         
         private void ParseSettings()
@@ -72,7 +73,7 @@ namespace LogoExt
             if (settings.FontFamily == null)
                 settings.FontFamily = "Tahoma";
             if (settings.TextSize == null)
-                settings.TextSize = 12;
+                settings.TextSize = 11;
             if (settings.DefaultForm == null)
                 settings.DefaultForm = "ItemPriceForm";
 
