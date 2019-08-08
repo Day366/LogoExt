@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace LogoExt
@@ -169,6 +170,7 @@ namespace LogoExt
             this.tabForms.Size = new System.Drawing.Size(919, 644);
             this.tabForms.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabForms.TabIndex = 0;
+            this.tabForms.SelectedIndexChanged += new EventHandler(tabForms_SelectedIndexChanged);
             // 
             // panelNotification
             // 

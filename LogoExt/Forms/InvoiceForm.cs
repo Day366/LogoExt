@@ -15,9 +15,9 @@ namespace LogoExt
 
         protected override void OnLoad(EventArgs e)
         {
-            panel1.Height = 85;
-            panel2.Height = (int)((this.Height - panel1.Height) * 0.60);
-            panel3.Height = (int)((this.Height - panel1.Height) * 0.40);
+            this.KeyPreview = true;
+            this.SetStyle(ControlStyles.Selectable, true);
+            this.GotFocus += new EventHandler(invoiceForm_GotFocus);
             dataGridView1.DataBindingComplete += dataGridView1_DataBindingComplete;
             dataGridView2.DataBindingComplete += dataGridView2_DataBindingComplete;
             dataGridView1.DoubleBuffered(true);
@@ -187,18 +187,31 @@ namespace LogoExt
                     e.Handled = e.SuppressKeyPress = true;          //Enter'a basınca alt satıra inmesini engellemek için şart
                 }
             }
-            else if (e.KeyCode == Keys.F5) {
-                if (dataGridView1.SelectedRows.Count == 1) {
+        }
+
+        private void invoiceForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F5)
+            {
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
                     QueryInvoices();
                 }
             }
         }
 
-        //dataGridView'da bi satır seçili ise ItemMovementsı getir. 
-        //KeyPressEventHandler ları sorun çıkardığı için burda yaptım 
+        private void invoiceForm_GotFocus(object sender, EventArgs e)
+        {
+            dataGridView1.Focus();
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-
+            if (keyData == Keys.F5) {
+                if (dataGridView1.SelectedRows.Count == 1) {
+                    QueryInvoices();
+                }
+            }
             return base.ProcessCmdKey(ref msg, keyData);
         }
     }
