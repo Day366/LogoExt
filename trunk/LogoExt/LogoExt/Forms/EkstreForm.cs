@@ -587,24 +587,85 @@ namespace LogoExt
             }
             return bakiye;
         }
-               
+
+        /*
+         * columnIndex == 1 Calculates avarage vadeDate for selected cells
+         *      rowIndex = 5 for Fatura
+         *      rowIndex = 6 for Çek
+         * columnIndex == 5 || columnIndex == 6 Sums the Borç or alacak collumn
+         */
         private void SumCellValues(DataGridView dt)
         {
             int columnIndex = 0;
+            int rowIndex = 0;
             decimal rowTotal = 0;
             decimal result = 0;
+            decimal borcTotal = 0;
+            bool once = true;
             NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+
             for (int i = 0; i < dt.SelectedCells.Count; i++) {
                 if (i == 0) {
                     columnIndex = dt.SelectedCells[i].ColumnIndex;
                 }
 
                 if (columnIndex == dt.SelectedCells[i].ColumnIndex) {
-                    if (dt.SelectedCells[i].Value != null && dt.SelectedCells[i].Value.ToString() != "") {
-                        if (Decimal.TryParse(dt.SelectedCells[i].Value.ToString(), style, CultureInfo.InvariantCulture, out result)) {
-                            rowTotal += result;
+                    if (columnIndex == 5 || columnIndex == 6) {
+                        if (dt.SelectedCells[i].Value != null && dt.SelectedCells[i].Value.ToString() != "") {
+                            if (Decimal.TryParse(dt.SelectedCells[i].Value.ToString(), style, CultureInfo.InvariantCulture, out result)) {
+                                rowTotal += result;
+                            }
                         }
                     }
+                    else if (columnIndex == 1) {
+                        decimal faturaTarihi = 0;
+                        if (once && dt.Rows[dt.SelectedCells[i].RowIndex].Cells[3].Value.ToString().Equals("Çek girişi")) {
+                            once = false;
+                            rowIndex = 6;
+                        }
+                        else if (once) {
+                            once = false;
+                            rowIndex = 5;
+                        }
+
+                        if (rowIndex == 6) {
+                            if (dt.Rows[dt.SelectedCells[i].RowIndex].Cells[3].Value.ToString().Equals("Çek girişi")) {
+                                faturaTarihi = (decimal)DateTime.ParseExact(dt.SelectedCells[i].Value.ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE")).ToOADate();
+                                Decimal.TryParse(dt.Rows[dt.SelectedCells[i].RowIndex].Cells[rowIndex].Value.ToString(), style, CultureInfo.InvariantCulture, out result);
+                                if (result == 0) {
+                                    label8.Text = "Toplam: Boş bir sıra seçtin";
+                                    return;
+                                }
+                            }
+                            else {
+                                label8.Text = "Toplam: Fatura ve çek sırası seçtin";
+                                return;
+                            }
+                        }
+                        else if (rowIndex == 5) { 
+                            if (!dt.Rows[dt.SelectedCells[i].RowIndex].Cells[3].Value.ToString().Equals("Çek girişi"))
+                            {
+                                faturaTarihi = (decimal)DateTime.ParseExact(dt.SelectedCells[i].Value.ToString(), "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("de-DE")).ToOADate();
+                                Decimal.TryParse(dt.Rows[dt.SelectedCells[i].RowIndex].Cells[rowIndex].Value.ToString(), style, CultureInfo.InvariantCulture, out result);
+                                if (result == 0)
+                                {
+                                    label8.Text = "Toplam: Boş bir sıra seçtin";
+                                    return;
+                                }
+                            }
+                            else {
+                                label8.Text = "Toplam: Fatura ve çek sırası seçtin";
+                                return;
+                            }
+                        }
+                        else {
+                            label8.Text = "Toplam: Çok yanlış şeyler seçtin";
+                            return;
+                        }
+                        rowTotal += faturaTarihi * result;
+                        borcTotal += result;
+                    }
+
                 }
                 else {
                     label8.Text = "Toplam: Farklı sütünları topladın!";
@@ -612,7 +673,13 @@ namespace LogoExt
                 }
             }
 
-            label8.Text = "Toplam: " + rowTotal.ToString("#,###0.00");
+            if (columnIndex == 1)
+            {
+                label8.Text = "Toplam: " + DateTime.FromOADate((double)(rowTotal / borcTotal)).ToString("dd.MM.yyyy");
+            }
+            else {
+                label8.Text = "Toplam: " + rowTotal.ToString("#,###0.00");
+            }
             label8.Visible = true;
         }
 
